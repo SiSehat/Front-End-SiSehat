@@ -1,7 +1,7 @@
 import drugsStyle from '../styles/Drug.module.css';
 
 export const getStaticProps = async () => {
-  const response = await fetch(`https://api-si-sehat.vercel.app/drug`);
+  const response = await fetch('https://api-si-sehat.vercel.app/drug');
   const datas = await response.json();
   
   return {
