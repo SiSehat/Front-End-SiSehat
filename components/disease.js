@@ -1,3 +1,5 @@
+import DiagnoseStyle from '../styles/Diagnose.module.css'
+
 const Disease = () => {
   return (
     <div>
@@ -5,7 +7,5 @@ const Disease = () => {
     </div>
   )
 }
-
-
 
 export default Disease

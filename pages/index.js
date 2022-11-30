@@ -5,7 +5,6 @@ import { BsCheckCircleFill } from 'react-icons/bs';
 import { RiHospitalFill } from 'react-icons/ri';
 import { AiFillMedicineBox } from 'react-icons/ai';
 import NavBar from '../components/nav-bar';
-import Diagnose from '../components/diagnose';
 import Footer from '../components/footer';
 
 export default function Home() {
@@ -24,7 +23,7 @@ export default function Home() {
               <li className={style.jumbotronItem}><BsCheckCircleFill className={style.icons} /> Dapatkan rekomendasi obat sesuai penyakit</li>
               <li className={style.jumbotronItem}><BsCheckCircleFill className={style.icons} /> Temukan rumah sakit terdekat dari lokasi Anda</li>
             </ul>
-            <Link href='#' className={style.buttonMedicineSeacrh}>Cari obat</Link>
+            <Link href='/diagnoses' className={style.buttonMedicineSeacrh}>Cari obat</Link>
           </div>
           <div className={style.rightJumbotron}>
             <div className={style.buttonRight}>
@@ -47,9 +46,6 @@ export default function Home() {
           <div className={style.menuItem}>
             <RiHospitalFill className={style.menuIcons} /> <strong>Cari rumah sakit terdekat </strong><p>Menampilkan rumah sakit terdekat dari lokasi Anda</p>
           </div>
-        </section>
-        <section>
-          <Diagnose />
         </section>
       </main>
       <Footer />

@@ -1,15 +1,13 @@
-import style from '../styles/Home.module.css';
+import DiagnoseStyle from '../styles/Diagnose.module.css';
+import DiagnoseSearchBar from './diagnose-search-bar';
 import Disease from './disease';
 
 const Diagnose = () => {
   return (
-    <div className={style.diagnoses}>
-      <h2>Diagnosa Penyakit</h2>
-      <p>Kami membantu mendeteksi dini penyakit dan memberikan rekomendasi obat sesuai dengan kebutuhan Anda</p>
-      <div>
-        <input placeholder='search name' />
-        <button>Cari</button>
-      </div>
+    <div className={DiagnoseStyle.diagnoses}>
+      <h2 className={DiagnoseStyle.header}>Diagnosa Penyakit</h2>
+      <p className={DiagnoseStyle.paragraph}>Kami membantu mendeteksi dini penyakit dan memberikan rekomendasi obat sesuai dengan kebutuhan Anda</p>
+      <DiagnoseSearchBar />
       <Disease />
     </div>
   )
