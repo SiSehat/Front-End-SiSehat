@@ -3,13 +3,14 @@ import drugsStyle from '../styles/Drug.module.css';
 export const getStaticProps = async () => {
   const response = await fetch('https://api-si-sehat.vercel.app/drug');
   const datas = await response.json();
-  
+  // console.log(datas.dataDrug);
   return {
     props: {
       drugs: datas.dataDrug.data,
     },
   }
 }
+
 
 const ListItems = ({ drugs }) => {
   return (
@@ -21,13 +22,6 @@ const ListItems = ({ drugs }) => {
         <p className={drugsStyle.cardCategory}>Kategori :</p>
         <button className={drugsStyle.buttonCard}>Detail</button>
       </div>
-      {/* <ul>
-        {drugs.dataDrug.data.map((drug) => (
-          <div key={drug.id}>
-            <li>{drug.data}</li>
-          </div>
-        ))}
-      </ul> */}
     </div>)
 };
 

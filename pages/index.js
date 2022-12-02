@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { BsCheckCircleFill } from 'react-icons/bs';
 import { RiHospitalFill } from 'react-icons/ri';
 import { AiFillMedicineBox } from 'react-icons/ai';
-import NavBar from '../components/nav-bar';
-import Footer from '../components/footer';
 
 export default function Home() {
   return (
@@ -13,9 +11,7 @@ export default function Home() {
       <Head>
         <title>Si Sehat</title>
       </Head>
-
       <main>
-        <NavBar />
         <section className={style.jumbotron}>
           <div className={style.leftJumbotron}>
             <h2 className={style.jumbotronHeader}>Solusi Mudah untuk Kesehatan Anda</h2>
@@ -48,8 +44,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
-
     </div>
   )
 }
