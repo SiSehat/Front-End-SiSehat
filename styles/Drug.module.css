@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.header {
+    padding: 10px;
+    display: block;
+    margin-left: 190px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    letter-spacing: -0.017em;
+
+    /* grey */
+    color: #5A5A5A;
+}
+
+.input {
+    border: 1px solid #BEBEBE;
+    padding: 10px;
+    margin-left: 200px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 500px;
+    margin-right: 10px;
+}
+
+.button {
+    border-radius: 8px;
+    background: #00A376;
+    border: 1px solid #00A376;
+    width: 150px;
+    padding: 8px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height */
+    letter-spacing: -0.017em;
+    cursor: pointer;
+}
+
+
+/* List Item CSS */
+
+.headingDrug {
+    padding: 5px;
+    display: block;
+    margin-left: 190px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+    letter-spacing: -0.017em;
+
+    color: #505050;
+}
+
+.cardBodyDrugs {
+    width: 200px;
+    padding: 20px;
+    display: grid;
+    margin-left: 190px;
+    margin-bottom: 10px;
+
+    background: #FFFFFF;
+    border: 1px solid #00A376;
+    border-radius: 10px;
+}
+
