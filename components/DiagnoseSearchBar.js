@@ -6,7 +6,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
     const [search, setSearch] = useState('');
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className={DiagnoseStyle.loadingText}>Loading...</div>;
     }
 
     const diagnoseDiseases = async (symptoms) => {
@@ -33,10 +33,11 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
         console.log(symptoms)
         setLoading(true)
         const {status, data} = await diagnoseDiseases(symptoms)
-        console.log(status)
+        // console.log(status)
         if(status==='success'){
             setLoading(false)
         }
+        // console.log(data)
         onDiagnoseHandler(data)
     }
 

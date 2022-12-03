@@ -57,3 +57,44 @@
     letter-spacing: -0.017em;
     cursor: pointer;
 }
+
+.disease__card {
+    /* green */
+    display: grid;
+    justify-content: start;
+    width: 300px;
+    padding: 15px;
+    color: white;
+    background: #00A376;
+    /* green */
+    border: 1px solid #00A376;
+    border-radius: 10px;
+
+}
+
+.disease__header {
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.017em;
+}
+
+/* Tipes atau demam tifoid adalah penyakit yang terjadi karena infeksi bakteri Salmonella typhi yang menyebar melalui makanan dan... */
+.disease__desc {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.017em;
+    color: #E1E1E1;
+}    
+

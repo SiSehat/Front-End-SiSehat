@@ -3,7 +3,8 @@ import DiagnoseStyle from '../../styles/Diagnose.module.css';
 import DiagnoseSearchBar from '../../components/DiagnoseSearchBar';
 import Head from 'next/head';
 import { useState } from 'react';
-import Disease from '../../components/DiseaseComponent';
+import DiagnoseList from '../../components/DiagnoseList';
+import MedicineList from '../../components/MedicineList';
 
 export default function Diagnose() {
     const [diagnoses, setDiagnoses] = useState('')
@@ -17,12 +18,13 @@ export default function Diagnose() {
             <Head>
                 <title>Diagnosa Penyakit</title>
             </Head>
-            <main>
+            <main id='main-content-diagnoses'>
                 <div className={DiagnoseStyle.diagnoses}>
                     <h2 className={DiagnoseStyle.header}>Diagnosa Penyakit</h2>
                     <p className={DiagnoseStyle.paragraph}>Kami membantu mendeteksi dini penyakit dan memberikan rekomendasi obat sesuai dengan kebutuhan Anda</p>
                     <DiagnoseSearchBar onDiagnoseHandler={onDiagnoseHandler}/>
-                    <Disease diagnoses={diagnoses}/>
+                    <DiagnoseList diagnoses={diagnoses}/>
+                    <MedicineList diagnoses={diagnoses}/>
                 </div>
             </main>
         </div>
