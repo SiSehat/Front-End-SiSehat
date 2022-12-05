@@ -18,7 +18,7 @@ const Drugs = () => {
                 <title>Informasi Obat</title>
             </Head>
 
-            <main>
+            <main className={styleDrug.main}>
                 <h2 className={styleDrug.header}>Cari Obat</h2>
                 <DrugsSearchBar onDrugsHandler={onDrugsHandler}/>
                 <DrugsList medicines={medicines}/>

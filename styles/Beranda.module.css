@@ -115,19 +115,6 @@
     border-radius: 260px 20px 20px 20px;
 }
 
-.nurse {
-    /* hero-image-4-edited 1 */
-
-    position: absolute;
-    background-size: 200px;
-    width: 600px;
-    height: 500px;
-    left: 700px;
-    top: 0px;
-    background: url("../public/hero-image.png");
-
-}
-
 .seacrhMedicine1 {
     position: absolute;
     left: 720px;
@@ -278,14 +265,14 @@
 
 @media screen and (min-width: 350px) {
     .navList {
-        display: none;
-        /* display: block; */
+        /* display: none; */
+        display: flex;
         width: 100%;
         position: relative;
-        background-color: red;
         margin: 0;
-        padding: 2em;
-        top: 9em;
+        padding: 10px;
+        top: 4em;
+        background-color: #007a58;
         right: 0;
     }
 
@@ -320,16 +307,18 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
+        height: 300px;
         padding: 0;
     }
 
     .jumbotronHeader {
         margin-left: 0px;
-        margin-top: -100px;
-        width: 350px;
-        margin-left: 5%;
+        margin-top: -10px;
+        width: 100%;
         font-size: 38px;
         display: flex;
+        align-items: center;
+        text-align: center;
     }
 
     .jumbotronItem {
@@ -362,82 +351,71 @@
         background-color: #00A376;
         border: 0;
         font-size: 32px;
+        top: 1rem;
         position: absolute;
-        right: 10px;
+        right: 1em;
         color: white;
         cursor: pointer;
     }
 }
 
 @media screen and (min-width: 700px) {
-    .navItem {
-        display: flex;
+    .navList {
+        display: none;
     }
 
     .nurse {
+        display: none;
+    }
+
+    .navList{
         display: flex;
+        top: 0;
+        background-color: none;
+        width: auto;
+        right: 0;
+    }
+
+    .jumbotronHeader{
+        text-align: center;
+        margin-left: 10%;
     }
 
     .hamburger {
         display: none;
     }
 
-}
-
-
-/* @media screen and (min-width: 1400px) {
-    .nurse {
-        left: 700px;;
+    .buttonMedicineSeacrh {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin-left: 5%;
     }
 
-    .jumbotronHeader {
-        margin-left: 45px;
-    }
-
-    .jumbotronItem{
-        margin-left: 8px;
-    }
-
-    .buttonMedicineSeacrh{
-        margin-left: 100px;
+    .menuSection {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
     }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1100px) {
+    .buttonMedicineSeacrh {
+        width: 20%;
+    }
+
+    .jumbotron {
+        height: 400px;
+    }
+
     .nurse {
-        background: url("../public/hero-image.png");
+        display: block;
+        position: absolute;
+        background-size: 200px;
+        width: 500px;
+        height: 450px;
         left: 700px;
-    }
-
-    .jumbotronHeader {
-        margin-left: 45px;
-    }
-
-    .jumbotronItem{
-        margin-left: 8px;
-    }
-
-    .buttonMedicineSeacrh{
-        margin-left: 100px;
+        top: 0px;
+        background: url("../public/hero-image.png");
+    
     }
 }
-
-@media screen and (min-width: 1000px) {
-    .nurse {
-        left: 400px;
-    }
-
-    .jumbotronHeader {
-        margin-left: -10px;
-    }
-
-    .jumbotronItem{
-        margin-left: -50px;
-        font-size: 14px;
-        letter-spacing: 1px;
-    }
-
-    .buttonMedicineSeacrh{
-        margin-left: 40px;
-    }
-} */

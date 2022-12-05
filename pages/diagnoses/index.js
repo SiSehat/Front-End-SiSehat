@@ -18,7 +18,7 @@ export default function Diagnose() {
             <Head>
                 <title>Diagnosa Penyakit</title>
             </Head>
-            <main id='main-content-diagnoses'>
+            <main id='main-content-diagnoses' className={DiagnoseStyle.main}>
                 <div className={DiagnoseStyle.diagnoses}>
                     <h2 className={DiagnoseStyle.header}>Diagnosa Penyakit</h2>
                     <p className={DiagnoseStyle.paragraph}>Kami membantu mendeteksi dini penyakit dan memberikan rekomendasi obat sesuai dengan kebutuhan Anda</p>
