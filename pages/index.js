@@ -19,10 +19,12 @@ export default function Home() {
               <li className={style.jumbotronItem}><BsCheckCircleFill className={style.icons} /> Dapatkan rekomendasi obat sesuai penyakit</li>
               <li className={style.jumbotronItem}><BsCheckCircleFill className={style.icons} /> Temukan rumah sakit terdekat dari lokasi Anda</li>
             </ul>
-            <Link href='/diagnoses' className={style.buttonMedicineSeacrh}>Cari obat</Link>
+            <div className={style.buttonDiagnoses}>
+              <Link href='/diagnoses' className={style.buttonMedicineSeacrh}>Mulai Diagnosa</Link>
+            </div>
           </div>
           <div className={style.rightJumbotron}>
-            <div className={style.buttonRight}>
+            {/* <div className={style.buttonRight}>
               <Link href='#' className={style.seacrhMedicine1}>
                 <AiFillMedicineBox className={style.icons} /> Cari obat
               </Link>
@@ -30,7 +32,7 @@ export default function Home() {
                 <RiHospitalFill className={style.icons} /> Cari rumah sakit terdekat
               </Link>
             </div>
-            <div className={style.backgroundRight}></div>
+            <div className={style.backgroundRight}></div> */}
             <div className={style.nurse}></div>
           </div>
         </section>

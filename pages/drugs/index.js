@@ -1,9 +1,17 @@
 import Head from "next/head";
-import ListDrugs from "../../components/ListDrugs";
+import { useState } from "react";
+import DrugsList from "../../components/DrugsList";
+import DrugsSearchBar from "../../components/DrugsSearchBar";
 import styleDrug from '../../styles/Drug.module.css';
 
-
 const Drugs = () => {
+    const [medicines, setMedicines] = useState([])
+
+    const onDrugsHandler = (drugs) => {
+        setMedicines(drugs)
+        // console.log(drugs)
+    }
+
     return (
         <div>
             <Head>
@@ -12,11 +20,8 @@ const Drugs = () => {
 
             <main>
                 <h2 className={styleDrug.header}>Cari Obat</h2>
-                <div>
-                    <input placeholder="Masukkan Nama Obat" className={styleDrug.input}/>
-                    <button className={styleDrug.button}>Cari</button>
-                </div>
-                <ListDrugs />
+                <DrugsSearchBar onDrugsHandler={onDrugsHandler}/>
+                <DrugsList medicines={medicines}/>
             </main>
         </div>
     )

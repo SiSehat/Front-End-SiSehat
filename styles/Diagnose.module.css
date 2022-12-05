@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 .header {
     padding: 5px;
@@ -58,9 +59,122 @@
     cursor: pointer;
 }
 
+/* Card List */
+
+.cardList {
+    margin-top: -50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Disease Styling */
+
+.disease__title {
+    padding: 5px;
+    display: block;
+    margin-left: 140px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.017em;
+
+    color: #505050;
+}
+
 .disease__card {
     /* green */
+
+    margin-left: 140px;
+    justify-content: start;
+    width: 300px;
+    padding: 15px;
+    color: #00A376;
+    background: white;
+    /* green */
+    border: 1px solid #00A376;
+    border-radius: 10px;
+
+}
+
+.disease__card:hover {
+    cursor: pointer;
+}
+
+.disease__header {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #00A376;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.017em;
+}
+
+.disease__image {
+    width: 100%;
+}
+
+.disease__desc {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.017em;
+
+    /* grey-light */
+    color: #6E6E6E;
+
+}
+
+.disease__button {
+    display: flex;
+    width: 35%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 0px;
+    padding: 10px;
+    background: #00A376;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.017em;
+}
+
+/* Diagnose Style */
+
+.diagnose__title {
+    padding: 5px;
+    display: block;
+    margin-left: 140px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.017em;
+
+    color: #505050;
+}
+
+.diagnose__card {
+    /* green */
     display: grid;
+    margin-left: 140px;
     justify-content: start;
     width: 300px;
     padding: 15px;
@@ -72,9 +186,11 @@
 
 }
 
-.disease__header {
+.diagnose__header {
     text-decoration: none;
     color: white;
+    margin-top: -10px;
+    margin-bottom: -10px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -85,9 +201,8 @@
     letter-spacing: -0.017em;
 }
 
-/* Tipes atau demam tifoid adalah penyakit yang terjadi karena infeksi bakteri Salmonella typhi yang menyebar melalui makanan dan... */
-.disease__desc {
-    font-family: 'Inter', sans-serif;
+.diagnose__desc {
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -96,5 +211,23 @@
     align-items: center;
     letter-spacing: -0.017em;
     color: #E1E1E1;
-}    
+}
 
+.diagnose__detail {
+    text-decoration: none;
+    color: white;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-top: 10px;
+    line-height: 15px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.017em;
+
+    color: #FFFFFF;
+}

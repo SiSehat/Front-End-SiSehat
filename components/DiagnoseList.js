@@ -1,6 +1,6 @@
 import DiagnoseStyle from '../styles/Diagnose.module.css'
 import Link from 'next/link'
-
+import { AiOutlineArrowRight } from 'react-icons/ai'
 
 const DiagnoseList = ({ diagnoses }) => {
   console.log(diagnoses)
@@ -10,11 +10,14 @@ const DiagnoseList = ({ diagnoses }) => {
     )
   }
   return (
-    <section>
-      <h2>Kemungkinan Diagnosa</h2>
-      <div id='disease__card' className={DiagnoseStyle.disease__card}>
-        <Link href='#' className={DiagnoseStyle.disease__header}><h3>{diagnoses.title}</h3></Link>
-        <p className={DiagnoseStyle.disease__desc}>{diagnoses.short_desc}</p>
+    <section className={DiagnoseStyle.cardList}>
+      <div>
+        <h2 className={DiagnoseStyle.diagnose__title}>Kemungkinan Diagnosa</h2>
+        <div id='diagnose__card' className={DiagnoseStyle.diagnose__card}>
+          <Link href='#' className={DiagnoseStyle.diagnose__header}><h3>{diagnoses.title}</h3></Link>
+          <p className={DiagnoseStyle.diagnose__desc}>{diagnoses.short_desc}</p>
+          <Link href='#' className={DiagnoseStyle.diagnose__detail}>Baca Selengkapnya <AiOutlineArrowRight/> </Link>
+        </div>
       </div>
     </section>
   )
