@@ -6,13 +6,7 @@ import '../styles/globals.css'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <header>
-        <NavBar />
-      </header>
       <Component {...pageProps} />
-      <footer>
-        <Footer />
-      </footer>
     </>
   )
 }

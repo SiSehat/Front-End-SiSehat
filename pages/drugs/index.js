@@ -3,6 +3,8 @@ import { useState } from "react";
 import DrugsList from "../../components/DrugsList";
 import DrugsSearchBar from "../../components/DrugsSearchBar";
 import styleDrug from '../../styles/Drug.module.css';
+import NavBar from "../../components/NavBar";
+import Footer from "../../components/FooterBar";
 
 const Drugs = () => {
     const [medicines, setMedicines] = useState([])
@@ -17,12 +19,17 @@ const Drugs = () => {
             <Head>
                 <title>Informasi Obat</title>
             </Head>
-
+            <header>
+                <NavBar />
+            </header>
             <main className={styleDrug.main}>
                 <h2 className={styleDrug.header}>Cari Obat</h2>
-                <DrugsSearchBar onDrugsHandler={onDrugsHandler}/>
-                <DrugsList medicines={medicines}/>
+                <DrugsSearchBar onDrugsHandler={onDrugsHandler} />
+                <DrugsList medicines={medicines} />
             </main>
+            <footer>
+                <Footer />
+            </footer>
         </div>
     )
 }
