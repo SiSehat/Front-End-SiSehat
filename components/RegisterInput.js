@@ -1,8 +1,10 @@
 import { useState } from "react"
 import style from '../styles/LoginRegis.module.css';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 const RegisterInput = () => {
+    const router = useRouter()
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -45,6 +47,7 @@ const RegisterInput = () => {
             password: password,
         })
         if(data.status === 'success') {
+            router.push('/login')
             toast.success('Berhasil Registrasi')
         } else {
             toast.error('Gagal Registrasi')

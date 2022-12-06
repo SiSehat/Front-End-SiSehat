@@ -48,7 +48,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
     <div>
       <form onSubmit={onHandlerSearch}>
         <input className={DiagnoseStyle.input}
-          placeholder='Cari Obat'
+          placeholder='Tuliskan nama obat, misalnya: Paramex Flu dan Batuk, dsb '
           value={search}
           onChange={onSearch} />
         <button className={DiagnoseStyle.button} type="submit">Cari</button>

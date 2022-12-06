@@ -45,7 +45,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
         <div>
             <form onSubmit={onHandlerSearch}>
                 <input className={DiagnoseStyle.input}
-                    placeholder='search name'
+                    placeholder='Tuliskan gejala anda, misalnya : lemas, demam, dsb'
                     value={search}
                     onChange={onSearch} />
                 <button className={DiagnoseStyle.button} type="submit">Cari</button>

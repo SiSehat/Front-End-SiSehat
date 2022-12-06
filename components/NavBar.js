@@ -17,7 +17,7 @@ const NavBar = () => {
             <ul className={display ? style.navList : style.navList.active } >
                 <li className={style.navItem}><Link href="/" className={style.navLink}>Beranda</Link></li>
                 <li className={style.navItem}><Link href="/drugs" className={style.navLink}>Info Obat</Link></li>
-                <li className={style.navItem}><Link href="#" className={style.navLink}>Rumah Sakit Terdekat</Link></li>
+                <li className={style.navItem}><Link href="/map" className={style.navLink}>Rumah Sakit Terdekat</Link></li>
             </ul>
             <div className='nav-bar__menu'>
                 <button className={style.hamburger} onClick={handleClick}>{display ? <GrFormClose /> : <FiMenu /> }</button>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import style from '../styles/LoginRegis.module.css';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
