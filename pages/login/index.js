@@ -2,7 +2,7 @@ import Head from "next/head"
 import LoginInput from "../../components/LoginInput"
 
 const Login = () => {
-
+    
     return (
         <>
             <Head>

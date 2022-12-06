@@ -13,9 +13,8 @@ export default function Home() {
       <Head>
         <title>Si Sehat</title>
       </Head>
-      <header>
-        <NavBar />
-      </header>
+      <NavBar />
+
       <main>
         <section className={style.jumbotron}>
           <div className={style.leftJumbotron}>

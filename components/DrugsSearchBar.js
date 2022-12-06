@@ -8,7 +8,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
   const [search, setSearch] = useState('');
 
   if (loading) {
-    return <div className={DiagnoseStyle.loadingText}>Loading...</div>;
+    return <div className={DiagnoseStyle.loadingText}></div>;
   }
 
   const findMedicine = async (medicines) => {

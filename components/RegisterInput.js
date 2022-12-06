@@ -1,5 +1,6 @@
 import { useState } from "react"
 import style from '../styles/LoginRegis.module.css';
+import { toast } from 'react-toastify';
 
 const RegisterInput = () => {
     const [username, setUsername] = useState('')
@@ -43,6 +44,11 @@ const RegisterInput = () => {
             email: email,
             password: password,
         })
+        if(data.status === 'success') {
+            toast.success('Berhasil Registrasi')
+        } else {
+            toast.error('Gagal Registrasi')
+        }
         console.log(data)
     }
 
@@ -62,7 +68,7 @@ const RegisterInput = () => {
                 </div>
                 <div className={style.form_input}>
                     <label className={style.input_label}>Password</label>
-                    <input className={style.input__form} onChange={onChangePassword} />
+                    <input className={style.input__form} onChange={onChangePassword} type="password"/>
                 </div>
                 <button type="submit" className={style.form_button}>Masuk</button>
             </form>
