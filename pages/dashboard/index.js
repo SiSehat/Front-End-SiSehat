@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import DashboardListDisease from '../../components/DashboardListDisease'
 import SideBar from '../../components/SideBar'
 
 const Dashboard = () => {
@@ -9,9 +10,9 @@ const Dashboard = () => {
           Dashboard
         </title>
       </Head>
-      <SideBar />
+      {/* <SideBar /> */}
       <main>
-
+        <DashboardListDisease />
       </main>
     </>
   )

@@ -221,52 +221,12 @@
     color: #00A376;
 }
 
-.footerLeft {
-    margin-right: 35%;
-    text-decoration: none;
-    display: block;
-    color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
 
-    color: #E1E1E1;
-}
-
-.footerRight {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    justify-items: center;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
-}
-
-.footerRight a {
-    text-decoration: none;
-    display: block;
-    color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
-
-    color: #E1E1E1;
-}
 
 @media screen and (min-width: 350px) {
     .navList {
         /* display: none; */
-        display: flex;
+        display: none;
         width: 100%;
         position: relative;
         margin: 0;
@@ -325,6 +285,10 @@
         margin-left: 5%;
         font-size: 14px;
         letter-spacing: 0.5px;
+    }
+
+    .jumbotronList{
+        display: none;
     }
 
     .buttonMedicineSeacrh {

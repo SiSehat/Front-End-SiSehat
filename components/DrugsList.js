@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import DiagnoseStyle from '../styles/Diagnose.module.css'
 import Link from "next/link"
 

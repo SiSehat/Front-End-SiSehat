@@ -30,7 +30,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
     const onHandlerSearch = async (e) => {
         e.preventDefault();
         const symptoms = search.trim().toLowerCase().replace(/\s/g, '').split(',')
-        console.log(symptoms)
+        // console.log(symptoms)
         setLoading(true)
         const {status, data} = await diagnoseDiseases(symptoms)
         // console.log(status)

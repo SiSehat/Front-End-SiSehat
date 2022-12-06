@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 
 const DiagnoseList = ({ diagnoses }) => {
-  console.log(diagnoses)
   if (!diagnoses) {
     return (
       <div></div>
@@ -16,7 +15,7 @@ const DiagnoseList = ({ diagnoses }) => {
         <div id='diagnose__card' className={DiagnoseStyle.diagnose__card}>
           <Link href='#' className={DiagnoseStyle.diagnose__header}><h3>{diagnoses.title}</h3></Link>
           <p className={DiagnoseStyle.diagnose__desc}>{diagnoses.short_desc}</p>
-          <Link href='#' className={DiagnoseStyle.diagnose__detail}>Baca Selengkapnya <AiOutlineArrowRight/> </Link>
+          <Link href='/diagnose/' className={DiagnoseStyle.diagnose__detail}>Baca Selengkapnya <AiOutlineArrowRight/> </Link>
         </div>
       </div>
     </section>
