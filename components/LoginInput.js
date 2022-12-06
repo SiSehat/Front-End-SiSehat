@@ -9,19 +9,22 @@ const LoginInput = () => {
 
     // useEffect(() => {
     const loginAPI = async ({ username, email, password }) => {
-        const response = await fetch('https://api-si-sehat.vercel.app/login', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                username,
-                email,
-                password
+        try {
+            const response = await fetch('https://api-si-sehat.vercel.app/login', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
             })
-        })
-        const result = await response.json()
-        return result
+            const result = await response.json()
+            return result
+        } catch (error) {
+            
+        }
     }
     // }, [])
 
@@ -53,10 +56,6 @@ const LoginInput = () => {
             <h1 className={style.app_title}>Selamat Datang</h1>
             <p className={style.app_paragraph}>Silakan masuk dengan akun Anda</p>
             <form onSubmit={onSubmitHandler} className={style.app_form}>
-                <div className={style.form_input}>
-                    <label className={style.input_label}>Username</label>
-                    <input className={style.input__form} onChange={onChangeUsername} />
-                </div>
                 <div className={style.form_input}>
                     <label className={style.input_label}>Email</label>
                     <input className={style.input__form} onChange={onChangeEmail} />
