@@ -244,7 +244,7 @@
         text-align: center;
     }
 
-    .input{
+    .input {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -277,9 +277,41 @@
         margin-left: 0;
         text-align: center;
     }
+
     .disease__card {
         width: 100%;
         margin-left: 0;
+    }
+
+    .loadingText {
+        display: inline-block;
+        position: relative;
+        left: 45%;
+        margin-top: 10px;
+        width: 80px;
+        height: 80px;
+    }
+
+    .loadingText::after {
+        content: " ";
+        display: block;
+        margin: 0 auto;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 7px solid #00A376;
+        border-color: #00A376 transparent #00A376 transparent;
+        animation: loadingText 1.2s linear infinite;
+    }
+        
+
+    @keyframes loadingText {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
     }
 }
 

@@ -56,20 +56,28 @@ footer div {
 }
 
 @media screen and (min-width: 350px) {
-  ul {
+  nav ul {
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 10px;
+    top: 4em;
+    background-color: #007a58;
+  }
+
+  footer{
     display: none;
   }
 }
 
 @media screen and (min-width: 700px) {
   nav ul {
+    display: flex;
     position: absolute;
     right: 0;
-    margin-right: 5%;
-    display: flex;
   }
-
-  section div ul {
-    display: block;
+  footer{
+    display: flex;
   }
 }

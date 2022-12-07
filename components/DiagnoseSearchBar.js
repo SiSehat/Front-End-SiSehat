@@ -1,12 +1,13 @@
 import DiagnoseStyle from '../styles/Diagnose.module.css';
 import { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
     const [loading, setLoading] = useState(false)
     const [search, setSearch] = useState('');
 
     if (loading) {
-        return <div className={DiagnoseStyle.loadingText}>Loading...</div>;
+        return <div className={DiagnoseStyle.loadingText}></div>;
     }
 
     const diagnoseDiseases = async (symptoms) => {
@@ -20,6 +21,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
             })
         })
         const data = await resp.json();
+        console.log(data);
         return data
     }
 
@@ -30,11 +32,12 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
     const onHandlerSearch = async (e) => {
         e.preventDefault();
         const symptoms = search.trim().toLowerCase().replace(/\s/g, '').split(',')
-        console.log(symptoms)
+        // console.log(symptoms)
         setLoading(true)
         const {status, data} = await diagnoseDiseases(symptoms)
         // console.log(status)
         if(status==='success'){
+            toast.success('Diagnosa dan Rekomendasi Obat Ditemukan')
             setLoading(false)
         }
         // console.log(data)
@@ -45,7 +48,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
         <div>
             <form onSubmit={onHandlerSearch}>
                 <input className={DiagnoseStyle.input}
-                    placeholder='search name'
+                    placeholder='Tuliskan gejala anda, misalnya : lemas, demam, dsb'
                     value={search}
                     onChange={onSearch} />
                 <button className={DiagnoseStyle.button} type="submit">Cari</button>

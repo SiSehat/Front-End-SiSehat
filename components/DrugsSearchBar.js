@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import drugsStyle from '../styles/Drug.module.css';
+import { toast } from 'react-toastify';
 import DiagnoseStyle from '../styles/Diagnose.module.css';
 
 const DrugsSearchBar = ({ onDrugsHandler }) => {
@@ -8,7 +8,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
   const [search, setSearch] = useState('');
 
   if (loading) {
-    return <div className={DiagnoseStyle.loadingText}>Loading...</div>;
+    return <div className={DiagnoseStyle.loadingText}></div>;
   }
 
   const findMedicine = async (medicines) => {
@@ -22,7 +22,6 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
       })
     })
     const data = await resp.json();
-    // console.log(data)
     setMedicines(data)
     return data 
   }
@@ -38,6 +37,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
     setLoading(true)
     const { status, data } = await findMedicine(medicines)
     if (status === 'success') {
+      toast.success('Obat Ditemukan')
       setLoading(false)
     }
     // console.log(data)
@@ -48,7 +48,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
     <div>
       <form onSubmit={onHandlerSearch}>
         <input className={DiagnoseStyle.input}
-          placeholder='Cari Obat'
+          placeholder='Tuliskan nama obat, misalnya: Paramex Flu dan Batuk, dsb '
           value={search}
           onChange={onSearch} />
         <button className={DiagnoseStyle.button} type="submit">Cari</button>

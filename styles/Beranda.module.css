@@ -221,52 +221,12 @@
     color: #00A376;
 }
 
-.footerLeft {
-    margin-right: 35%;
-    text-decoration: none;
-    display: block;
-    color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
 
-    color: #E1E1E1;
-}
-
-.footerRight {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    justify-items: center;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
-}
-
-.footerRight a {
-    text-decoration: none;
-    display: block;
-    color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
-
-    color: #E1E1E1;
-}
 
 @media screen and (min-width: 350px) {
     .navList {
         /* display: none; */
-        display: flex;
+        display: none;
         width: 100%;
         position: relative;
         margin: 0;
@@ -327,6 +287,10 @@
         letter-spacing: 0.5px;
     }
 
+    .jumbotronList{
+        display: none;
+    }
+
     .buttonMedicineSeacrh {
         width: 90%;
         display: flex;
@@ -360,19 +324,13 @@
 }
 
 @media screen and (min-width: 700px) {
-    .navList {
-        display: none;
-    }
-
-    .nurse {
-        display: none;
-    }
-
     .navList{
+        position: absolute;
         display: flex;
         top: 0;
-        background-color: none;
+        background-color: #00A376;
         width: auto;
+        margin-right: 5%;
         right: 0;
     }
 

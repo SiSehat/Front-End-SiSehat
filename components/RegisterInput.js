@@ -1,7 +1,10 @@
 import { useState } from "react"
 import style from '../styles/LoginRegis.module.css';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/router';
 
 const RegisterInput = () => {
+    const router = useRouter()
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -47,6 +50,12 @@ const RegisterInput = () => {
             email: email,
             password: password,
         })
+        if(data.status === 'success') {
+            router.push('/login')
+            toast.success('Berhasil Registrasi')
+        } else {
+            toast.error('Gagal Registrasi')
+        }
         console.log(data)
     }
 
@@ -66,7 +75,7 @@ const RegisterInput = () => {
                 </div>
                 <div className={style.form_input}>
                     <label className={style.input_label}>Password</label>
-                    <input className={style.input__form} onChange={onChangePassword} />
+                    <input className={style.input__form} onChange={onChangePassword} type="password"/>
                 </div>
                 <button type="submit" className={style.form_button}>Masuk</button>
             </form>
