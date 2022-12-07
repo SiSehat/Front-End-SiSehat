@@ -4,10 +4,10 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer>
-      <div>
+      <ul>
         <h3>SiSehat</h3>
-        <p>Memberikan kemudahan menemukan obat <br /> sesuai kebutuhan demi kesehatan Anda </p>
-      </div>
+        <li>Memberikan kemudahan menemukan obat <br /> sesuai kebutuhan demi kesehatan Anda </li>
+      </ul>
       <ul>
         <h3>Layanan</h3>
         <li><Link href="/drugs">Rekomendasi Obat</Link></li>

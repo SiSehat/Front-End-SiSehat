@@ -1,5 +1,6 @@
 import DiagnoseStyle from '../styles/Diagnose.module.css';
 import { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
     const [loading, setLoading] = useState(false)
@@ -20,6 +21,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
             })
         })
         const data = await resp.json();
+        console.log(data);
         return data
     }
 
@@ -35,6 +37,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
         const {status, data} = await diagnoseDiseases(symptoms)
         // console.log(status)
         if(status==='success'){
+            toast.success('Diagnosa dan Rekomendasi Obat Ditemukan')
             setLoading(false)
         }
         // console.log(data)

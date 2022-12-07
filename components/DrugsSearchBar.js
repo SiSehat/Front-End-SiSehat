@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import drugsStyle from '../styles/Drug.module.css';
+import { toast } from 'react-toastify';
 import DiagnoseStyle from '../styles/Diagnose.module.css';
 
 const DrugsSearchBar = ({ onDrugsHandler }) => {
@@ -22,7 +22,6 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
       })
     })
     const data = await resp.json();
-    // console.log(data)
     setMedicines(data)
     return data 
   }
@@ -38,6 +37,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
     setLoading(true)
     const { status, data } = await findMedicine(medicines)
     if (status === 'success') {
+      toast.success('Obat Ditemukan')
       setLoading(false)
     }
     // console.log(data)

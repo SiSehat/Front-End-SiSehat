@@ -324,19 +324,13 @@
 }
 
 @media screen and (min-width: 700px) {
-    .navList {
-        display: none;
-    }
-
-    .nurse {
-        display: none;
-    }
-
     .navList{
+        position: absolute;
         display: flex;
         top: 0;
-        background-color: none;
+        background-color: #00A376;
         width: auto;
+        margin-right: 5%;
         right: 0;
     }
 

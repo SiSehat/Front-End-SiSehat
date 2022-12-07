@@ -10,7 +10,9 @@ const Dashboard = () => {
           Dashboard
         </title>
       </Head>
-      {/* <SideBar /> */}
+      <header>
+        <SideBar />
+      </header>
       <main>
         <DashboardListDisease />
       </main>

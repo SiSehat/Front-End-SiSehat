@@ -1,14 +1,10 @@
 import React from 'react'
 
 const DiagnoseIdPage = () => {
-    const diagnoseDetail = async (id) => {
-        const response = await fetch(`https://api-si-sehat.vercel.app/disease/${id}`)
-        const data = await response.json()
-        console.log(data)
-    }
+
     return (
         <div>
-            <button onClick={diagnoseDetail}>kakakks</button>
+            <button>kakakks</button>
         </div>
     )
 }

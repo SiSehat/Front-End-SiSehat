@@ -11,16 +11,10 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 
-.nav_bar__menu {
+.nav_bar__menu .hamburger {
     position: absolute;
     left: 10px;
-    top: 10px;
-}
-
-.hamburger {
-    position: absolute;
-    font-size: 20px;
-    border: 0;
+    top: 20px;
 }
 
 .list__header {
