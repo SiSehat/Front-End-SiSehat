@@ -96,6 +96,7 @@
     /* green */
     border: 1px solid #00A376;
     border-radius: 10px;
+
 }
 
 .disease__card:hover {
@@ -152,7 +153,6 @@
     font-size: 14px;
     line-height: 17px;
     letter-spacing: -0.017em;
-    cursor: pointer;
 }
 
 /* Diagnose Style */
@@ -183,7 +183,7 @@
     /* green */
     border: 1px solid #00A376;
     border-radius: 10px;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
 }
 
 .diagnose__header {
@@ -216,10 +216,7 @@
 .diagnose__detail {
     text-decoration: none;
     color: white;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    padding-right: 1em;
-    margin-left: 0;
+
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -231,10 +228,7 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.017em;
-    background-color: #00A376;
-    border-radius: 10px;
-    border: 0;
-    cursor: pointer;
+
     color: #FFFFFF;
 }
 
