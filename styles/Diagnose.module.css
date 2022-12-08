@@ -153,6 +153,7 @@
     font-size: 14px;
     line-height: 17px;
     letter-spacing: -0.017em;
+    cursor: pointer;
 }
 
 /* Diagnose Style */
@@ -230,6 +231,10 @@
     letter-spacing: -0.017em;
 
     color: #FFFFFF;
+    background-color: #00A376;
+    padding: 1em;
+    border: 0;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 350px) {

@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Footer from "../../components/FooterBar"
-import NavBar from "../../components/NavBar"
+import NavBar from '../../components/navbar/NavBar';
 import style from "../../styles/DetailDisease.module.css"
 import { BiArrowBack } from 'react-icons/bi'
 import Link from "next/link"

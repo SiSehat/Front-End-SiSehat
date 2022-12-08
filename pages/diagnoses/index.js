@@ -12,7 +12,6 @@ export default function Diagnose({}) {
     const [diagnoses, setDiagnoses] = useState('')
 
     const onDiagnoseHandler = (disease) => {
-        console.log(disease)
         setDiagnoses(disease)
     }
 
@@ -34,9 +33,6 @@ export default function Diagnose({}) {
                     <MedicineList diagnoses={diagnoses} />
                 </div>
             </main>
-            <footer>
-                <Footer />
-            </footer>
         </div>
     )
 }

@@ -39,6 +39,9 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
         if(status==='success'){
             toast.success('Diagnosa dan Rekomendasi Obat Ditemukan')
             setLoading(false)
+        } else {
+            toast.error('Diagnosa dan Rekomendasi Obat Tidak Ditemukan')
+            setLoading(false)
         }
         // console.log(data)
         onDiagnoseHandler(data)

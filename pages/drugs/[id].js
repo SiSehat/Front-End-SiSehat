@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Footer from "../../components/FooterBar"
-import NavBar from "../../components/NavBar"
+import NavBar from '../../components/navbar/NavBar';
 import style from "../../styles/DetailDisease.module.css"
 import { BiArrowBack } from 'react-icons/bi'
 import Link from "next/link"
@@ -16,7 +16,7 @@ const DetailMedicine = (props) => {
                 <NavBar />
             </header>
             <main className={style.disease__main}>
-                <Link href="/drugs" className={style.back__arrow}><BiArrowBack />  Kembali Diagnosa</Link>
+                <Link href="/diagnoses" className={style.back__arrow}><BiArrowBack />  Kembali Diagnosa</Link>
                 <div className={style.disease__card}>
                     <h1 className={style.disease__title}>{props.title}</h1>
                     <img className={style.disease__image} src={props.thumbnail_url} />

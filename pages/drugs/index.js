@@ -3,7 +3,7 @@ import { useState } from "react";
 import DrugsList from "../../components/DrugsList";
 import DrugsSearchBar from "../../components/DrugsSearchBar";
 import styleDrug from '../../styles/Drug.module.css';
-import NavBar from "../../components/navbar/NavBar";
+import NavBar from '../../components/navbar/NavBar';
 import Footer from "../../components/FooterBar";
 
 const Drugs = () => {
