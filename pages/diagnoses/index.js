@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import DiagnoseList from '../../components/DiagnoseList';
 import MedicineList from '../../components/MedicineList';
-import NavBar from '../../components/NavBar';
+import NavBar from '../../components/navbar/NavBar';
 import Footer from '../../components/FooterBar';
 
 export default function Diagnose() {
@@ -22,7 +22,7 @@ export default function Diagnose() {
                 <title>Diagnosa Penyakit</title>
             </Head>
             <header>
-                <NavBar />
+                <NavBar active="diagnoses" />
             </header>
             <main id='main-content-diagnoses' className={DiagnoseStyle.main}>
                 <div className={DiagnoseStyle.diagnoses}>

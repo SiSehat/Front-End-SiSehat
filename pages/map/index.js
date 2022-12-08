@@ -1,13 +1,10 @@
 import { useRef, useState } from "react";
-import Footer from "../../components/footer";
-import NavBar from "../../components/nav-bar";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { TbLayoutSidebarLeftCollapse, TbLayoutSidebarRightCollapse } from 'react-icons/tb'
 import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import GeocoderControl from "./controler/geocoder";
 import GeolocationUser from "./controler/geolocationUser";
-import hospitalsLocation from '../../data/faskes.json'
-import isNegative from "../../utils/isNegative";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Map() {
     const [expand, setExpand] = useState(false);
@@ -32,7 +29,7 @@ export default function Map() {
     return (
         <>
             <header>
-                <NavBar />
+                <Navbar active="map"  />
             </header>
             
             <main className="container">
@@ -160,7 +157,6 @@ export default function Map() {
                 </div>
             </main>
 
-            <Footer />
         </>
     )
 }

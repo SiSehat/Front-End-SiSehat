@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { BsCheckCircleFill } from 'react-icons/bs';
 import { RiHospitalFill } from 'react-icons/ri';
 import { AiFillMedicineBox } from 'react-icons/ai';
-import NavBar from '../components/NavBar';
+import NavBar from '../components/navbar/NavBar';
 import Footer from '../components/FooterBar';
 
 export default function Home() {
@@ -13,7 +13,10 @@ export default function Home() {
       <Head>
         <title>Si Sehat</title>
       </Head>
-      <NavBar />
+
+      <header>
+        <NavBar />
+      </header>
 
       <main>
         <section className={style.jumbotron}>
@@ -27,18 +30,7 @@ export default function Home() {
               <Link href='/diagnoses' className={style.buttonMedicineSeacrh}>Mulai Diagnosa</Link>
             </div>
           </div>
-          <div className={style.rightJumbotron}>
-            {/* <div className={style.buttonRight}>
-              <Link href='#' className={style.seacrhMedicine1}>
-                <AiFillMedicineBox className={style.icons} /> Cari obat
-              </Link>
-              <Link href='#' className={style.seacrhMedicine2}>
-                <RiHospitalFill className={style.icons} /> Cari rumah sakit terdekat
-              </Link>
-            </div>
-            <div className={style.backgroundRight}></div> */}
-            <div className={style.nurse}></div>
-          </div>
+          <div className={style.nurse}></div>
         </section>
         <h3 className={style.menuHeader}>Layanan</h3>
         <section className={style.menuSection}>

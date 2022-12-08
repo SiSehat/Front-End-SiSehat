@@ -1,45 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-.navSiSehat {
-    display: flex;
-    text-decoration: none;
-    width: 89px;
-    height: 29px;
-    margin-right: 40%;
-
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    /* identical to box height */
-    letter-spacing: -0.017em;
-
-    color: #FFFFFF;
-}
-
-.navItem {
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    margin-right: 40px;
-    color: white;
-    align-items: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
-}
-
-.navList {
-    display: flex;
-}
-
-.navLink {
-    text-decoration: none;
-    color: white;
-}
-
 .jumbotron {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -51,6 +11,7 @@
     width: 100%;
     margin: 0 auto;
     border: 0;
+    overflow: hidden;
 }
 
 .jumbotronHeader {
@@ -83,8 +44,7 @@
 
 .buttonMedicineSeacrh {
     border: 1px solid white;
-    padding: 10px;
-    position: absolute;
+    padding: 10px; 
     left: 0;
     margin-left: 13rem;
     text-decoration: none;
@@ -171,15 +131,14 @@
 
 .menuSection {
     display: flex;
-    width: 1000px;
     justify-content: center;
     margin: 0 auto;
 }
 
 .menuItem {
+    width: 100%;
     display: grid;
     gap: 15px;
-    width: 400px;
     padding: 20px;
     background: #FFFFFF;
     border: 1px solid #00A376;
@@ -266,7 +225,7 @@
     .jumbotron {
         display: flex;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center;
         height: 300px;
         padding: 0;
     }
@@ -286,10 +245,7 @@
         font-size: 14px;
         letter-spacing: 0.5px;
     }
-
-    .jumbotronList{
-        display: none;
-    }
+ 
 
     .buttonMedicineSeacrh {
         width: 90%;
@@ -352,7 +308,7 @@
 
     .menuSection {
         grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
+        gap: 5vh;
     }
 }
 
@@ -363,17 +319,22 @@
 
     .jumbotron {
         height: 400px;
+        flex-direction: row;
     }
 
     .nurse {
-        display: block;
-        position: absolute;
+        display: block; 
         background-size: 200px;
         width: 500px;
         height: 450px;
         left: 700px;
         top: 0px;
         background: url("../public/hero-image.png");
-    
+        background-size: 62vh;
+        background-repeat: no-repeat;
+    }
+
+    .menuSection {
+        width: 62%;
     }
 }
