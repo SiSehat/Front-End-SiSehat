@@ -189,3 +189,7 @@ button.mapboxgl-popup-close-button:hover {
   color: white;
   border-top-right-radius: 10px;
 }
+
+footer {
+  top: unset;
+}

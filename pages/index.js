@@ -5,7 +5,6 @@ import { BsCheckCircleFill } from 'react-icons/bs';
 import { RiHospitalFill } from 'react-icons/ri';
 import { AiFillMedicineBox } from 'react-icons/ai';
 import NavBar from '../components/navbar/NavBar';
-import Footer from '../components/FooterBar';
 
 export default function Home() {
   return (

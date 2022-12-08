@@ -27,9 +27,6 @@ const Drugs = () => {
                 <DrugsSearchBar onDrugsHandler={onDrugsHandler} />
                 <DrugsList medicines={medicines} />
             </main>
-            <footer>
-                <Footer />
-            </footer>
         </div>
     )
 }

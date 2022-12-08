@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <ul>
         <h3>SiSehat</h3>
-        <li>Memberikan kemudahan menemukan obat <br /> sesuai kebutuhan demi kesehatan Anda </li>
+        <li>Memberikan kemudahan menemukan obat <br/> sesuai kebutuhan demi kesehatan Anda </li>
       </ul>
       <ul>
         <h3>Layanan</h3>
