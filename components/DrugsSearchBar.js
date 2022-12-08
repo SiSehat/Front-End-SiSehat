@@ -33,7 +33,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
   const onHandlerSearch = async (e) => {
     e.preventDefault()
     const medicines = search.trim().toLowerCase().split(',')
-    console.log(medicines)
+    // console.log(medicines)
     setLoading(true)
     const { status, data } = await findMedicine(medicines)
     if (status === 'success') {

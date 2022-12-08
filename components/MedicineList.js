@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import DiagnoseStyle from '../styles/Diagnose.module.css'
 import Link from "next/link"
+import Router from "next/router"
 
 const MedicineList = ({ diagnoses }) => {
     const [medicine, setMedicine] = useState([])
@@ -18,15 +19,22 @@ const MedicineList = ({ diagnoses }) => {
             })
             const data = await resp.json();
             setMedicine(data)
+            console.log(data)
             return data
         }
-        findMedicine(diagnoses.obat)
+        if(diagnoses){
+            findMedicine(diagnoses.obat)
+        }
     }, [diagnoses])
 
     if (medicine.status === 'fail' || medicine.data == undefined) {
         return (
             <div></div>
         )
+    }
+
+    const onDetailMedicine = (id) => {
+        Router.push(`/drugs/${id}`)
     }
 
     return (
@@ -38,7 +46,7 @@ const MedicineList = ({ diagnoses }) => {
                         <Link href='#' className={DiagnoseStyle.disease__header}><h3>{item.title}</h3></Link>
                         <img className={DiagnoseStyle.disease__image} src={item.thumbnail_url} />
                         <p className={DiagnoseStyle.disease__desc}>{item.short_desc}</p>
-                        <button className={DiagnoseStyle.disease__button}>Detail</button>
+                        <button className={DiagnoseStyle.disease__button} onClick={onDetailMedicine.bind(this, item.id)} >Detail</button>
                     </div>
                 ))}
             </div>

@@ -8,13 +8,14 @@ import MedicineList from '../../components/MedicineList';
 import NavBar from '../../components/navbar/NavBar';
 import Footer from '../../components/FooterBar';
 
-export default function Diagnose() {
+export default function Diagnose({}) {
     const [diagnoses, setDiagnoses] = useState('')
 
     const onDiagnoseHandler = (disease) => {
-        // console.log(disease)
+        console.log(disease)
         setDiagnoses(disease)
     }
+
 
     return (
         <div>
