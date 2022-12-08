@@ -4,7 +4,7 @@ import { AiOutlineArrowRight } from 'react-icons/ai'
 import Router from 'next/router'
 
 const DiagnoseList = ({ diagnoses }) => {
-  console.log(diagnoses)
+  // console.log(diagnoses)
   if (!diagnoses) {
     return (
       <div></div>

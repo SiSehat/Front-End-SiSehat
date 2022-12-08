@@ -152,6 +152,7 @@
     font-size: 14px;
     line-height: 17px;
     letter-spacing: -0.017em;
+    cursor: pointer;
 }
 
 /* Diagnose Style */
@@ -233,7 +234,7 @@
     background-color: #00A376;
     border-radius: 10px;
     border: 0;
-    
+    cursor: pointer;
     color: #FFFFFF;
 }
 
