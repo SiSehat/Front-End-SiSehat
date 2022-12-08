@@ -2,6 +2,7 @@ import DiagnoseStyle from '../styles/Diagnose.module.css'
 import Link from "next/link"
 
 const DrugsList = ({ medicines }) => {
+    console.log(medicines)
     if (medicines.length === 0) {
         return (
             <div></div>

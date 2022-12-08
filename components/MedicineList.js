@@ -18,9 +18,12 @@ const MedicineList = ({ diagnoses }) => {
             })
             const data = await resp.json();
             setMedicine(data)
+            console.log(data)
             return data
         }
-        findMedicine(diagnoses.obat)
+        if(diagnoses){
+            findMedicine(diagnoses.obat)
+        }
     }, [diagnoses])
 
     if (medicine.status === 'fail' || medicine.data == undefined) {
@@ -28,6 +31,8 @@ const MedicineList = ({ diagnoses }) => {
             <div></div>
         )
     }
+
+
 
     return (
         <section className={DiagnoseStyle.cardList}>
