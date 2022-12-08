@@ -9,9 +9,9 @@ const LoginInput = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-<<<<<<< HEAD
     // useEffect(() => {
     const loginAPI = async ({ username, email, password }) => {
+        const idToast = toast.loading('Tunggu sebentar .....')
         try {
             const response = await fetch('https://api-si-sehat.vercel.app/login', {
                 method: 'POST',
@@ -24,26 +24,11 @@ const LoginInput = () => {
                 })
             })
             const result = await response.json()
-            return result
+            return {result, idToast}
         } catch (error) {
-            
+            const result = error
+            return {result, idToast}
         }
-=======
-    const loginAPI = async ({ email, password }) => {
-        const response = await fetch('https://api-si-sehat.vercel.app/login', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                email,
-                password
-            })
-        })
-        const result = await response.json()
-        // console.log(result.status)
-        return result
->>>>>>> c410c2b5cc85e7c5356e40f0d41fb1c435b4fcc3
     }
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
@@ -55,20 +40,23 @@ const LoginInput = () => {
 
     const onSubmitHandler = async (e) => {
         e.preventDefault()
-        const data = await loginAPI({
+        const { result, idToast } = await loginAPI({
             // username: username,
             email: email,
             password: password,
         })
-        if(data.status === 'success') {
+        if(result.status === 'success') {
             e.preventDefault()
+            toast.update(idToast, 
+                { render: 'Login Berhasil', type: 'success', isLoading: false, autoClose: 5000 }
+            )
             router.push('/dasboard')
-            toast.success('Login Berhasil')
         } else {
-            toast.error('Email atau Password Salah!')
+            toast.update(idToast, 
+                { render: 'Email / Password salah', type: 'error', isLoading: false, autoClose: 5000 }
+            )
+            console.log(result);
         }
-
-        console.log(data.status)
     }
 
     return (

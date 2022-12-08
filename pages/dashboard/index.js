@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import DashboardListDisease from '../../components/DashboardListDisease'
-import SideBar from '../../components/SideBar'
+import Link from 'next/link'
+import DashboardListDisease from '../../components/dashboard/DashboardListDisease'
+import SideBar from '../../components/dashboard/SideBar'
 
 const Dashboard = () => {
   return (
@@ -11,10 +12,13 @@ const Dashboard = () => {
         </title>
       </Head>
       <header>
-        <SideBar />
+        <Link href="/" className='navSiSehat'>SiSehat</Link>
       </header>
       <main>
-        <DashboardListDisease />
+        <div className='wrapper-dashboard'>
+          <SideBar />
+          <DashboardListDisease />
+        </div>
       </main>
     </>
   )

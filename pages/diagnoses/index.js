@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import DiagnoseStyle from '../../styles/Diagnose.module.css';
 import DiagnoseSearchBar from '../../components/DiagnoseSearchBar';
 import Head from 'next/head';
@@ -15,7 +14,6 @@ export default function Diagnose({}) {
         console.log(disease)
         setDiagnoses(disease)
     }
-
 
     return (
         <div>

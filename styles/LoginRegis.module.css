@@ -17,14 +17,13 @@
 
 .app_paragraph {
     font-family: 'Nunito Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 14px;
     line-height: 27px;
     display: flex;
     align-items: center;
     letter-spacing: -0.017em;
-    color: #788880;
+    color: #3c3c3c;
 }
 
 .input_label {
@@ -53,13 +52,20 @@
     border-radius: 4px;
 }
 
+.form_button:hover {
+    cursor: pointer;
+    background-color: #00A376;
+    color: white;
+    transition: all .3s ;
+}
+
 .form_button {
     width: 100%;
     margin-top: 2em;
     padding: 7px;
     font-family: 'Nunito Sans', sans-serif;
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 14px;
     line-height: 27px;
     display: flex;
@@ -67,8 +73,8 @@
     letter-spacing: -0.017em;
     display: flex;
     justify-content: center;
-    color: #FFFFFF;
-    background: #00A376;
+    color: #00A376;
+    outline: 3px solid #00A376;
     border: 0;
     border-radius: 4px;
     margin-bottom: 1em;
