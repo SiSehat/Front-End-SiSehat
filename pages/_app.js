@@ -7,7 +7,6 @@ import '../styles/navbar/navbar.css'
 import '../styles/map/map.css'
 import '../styles/dashboard/dashboard.css'
 
-
 function MyApp({ Component, pageProps }) {
   return (
     <>

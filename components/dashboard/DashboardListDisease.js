@@ -1,4 +1,3 @@
-import style from '../../styles/DashboardDisease.module.css'
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import 'rsuite-table/dist/css/rsuite-table.css'; // or 'rsuite-table/dist/css/rsuite-table.css'
 import { useEffect, useState } from 'react';
@@ -73,18 +72,18 @@ const DashboardListDisease = () => {
                     onSortColumn={handleSortColumn}
                     loading={loading}
                     onRowClick={data => {
-                        console.log(data);
+                        
                     }}
                     >
-                    <Column width={70} align="center" fixed sortable>
+                    <Column  align="center" fixed sortable>
                         <HeaderCell>Id</HeaderCell>
                         <Cell dataKey="id" />
                     </Column>
 
-                    <Column width={130} fixed sortable>
+                    <Column  fixed sortable>
                         <HeaderCell
                         renderSortIcon={sortType => {
-                            console.log(sortType);
+                            // console.log(sortType);
 
                             if (sortType === 'asc') {
                                 return 1;
@@ -100,12 +99,12 @@ const DashboardListDisease = () => {
                         <Cell dataKey="name" />
                     </Column>
 
-                    <Column width={200}>
+                    <Column  >
                         <HeaderCell>Email</HeaderCell>
                         <Cell dataKey="email" />
                     </Column>
 
-                    <Column width={200}>
+                    <Column flexGrow={2}>
                         <HeaderCell>Avatar</HeaderCell>
                         <Cell dataKey="avatar" />
                     </Column>

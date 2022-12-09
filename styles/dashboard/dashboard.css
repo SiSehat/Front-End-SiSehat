@@ -94,16 +94,12 @@
 }
 
 .say-hello{
-    background-color: #00a375bc;
+    background-color: #7bffda4a;
     margin: 5vh 0;
     margin-bottom: 3.8vh;
     padding: 10px 8vh;
     border-radius: 10px;
-    color: white;
-}
-
-.dashboard-list .dashboard-content {
-
+    color: #00a375bc;
 }
 
 /* Dashboard - Content End */
