@@ -39,6 +39,9 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
     if (status === 'success') {
       toast.success('Obat Ditemukan')
       setLoading(false)
+    } else {
+      toast.error('Obat Tidak Ditemukan')
+      setLoading(false)
     }
     // console.log(data)
     onDrugsHandler(data)

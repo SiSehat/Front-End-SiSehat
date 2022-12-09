@@ -3,7 +3,9 @@ import Link from "next/link"
 import Router from 'next/router'
 
 const DrugsList = ({ medicines }) => {
-    if (medicines.length === 0) {
+    console.log(medicines)
+    if (!medicines?.length) {
+        
         return (
             <div></div>
         )
@@ -12,7 +14,7 @@ const DrugsList = ({ medicines }) => {
     const onHandlerDetail = (id) => {
         Router.push(`/drugs/${id}`)
     }
-
+    
     return (
         <section className={DiagnoseStyle.cardList}>
             <div>

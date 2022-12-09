@@ -49,4 +49,4 @@ function Navbar({ router }) {
     )
 }
 
-export default withRouter(Navbar)
+export default Navbar
