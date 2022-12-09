@@ -1,0 +1,39 @@
+@media only screen and (max-width: 817px){
+    .wrapper-dashboard {
+        background-color: red;
+        display: block;
+    }
+
+    .wrapper-sidebar-dashboard {
+        width: 100%;
+        padding: 0;
+        transition: all .2s;
+    }
+
+    .head-sidebar {
+        margin-bottom: 0px !important;
+    }
+
+    .item-sidebar {
+        display: none;
+    }
+
+    .item-sidebar-mobile {
+        display: block;
+    }
+
+    .hide .title {
+        display: inline-block;
+    }
+    .hide span {
+        display: inline;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .say-hello {
+        padding: 10px;
+        text-align: center;
+        overflow: auto;
+    }
+}

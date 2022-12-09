@@ -2,8 +2,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 import DashboardListDisease from '../../components/dashboard/DashboardListDisease'
 import SideBar from '../../components/dashboard/SideBar'
+import Footer from '../../components/FooterBar'
 
 const Dashboard = () => {
+  
   return (
     <>
       <Head>
@@ -11,9 +13,6 @@ const Dashboard = () => {
           Dashboard
         </title>
       </Head>
-      <header>
-        <Link href="/" className='navSiSehat'>SiSehat</Link>
-      </header>
       <main>
         <div className='wrapper-dashboard'>
           <SideBar />

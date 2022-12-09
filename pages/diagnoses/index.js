@@ -32,9 +32,7 @@ export default function Diagnose({}) {
                     <MedicineList diagnoses={diagnoses} />
                 </div>
             </main>
-            <footer>
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     )
 }

@@ -6,6 +6,7 @@ import '../styles/globals.css'
 import '../styles/navbar/navbar.css'
 import '../styles/map/map.css'
 import '../styles/dashboard/dashboard.css'
+import '../styles/dashboard/dashboard-responsive.css'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,7 +16,6 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Component {...pageProps} />
         <ToastContainer />
-      <Footer />
     </>
   )
 }

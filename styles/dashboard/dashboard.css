@@ -2,16 +2,16 @@
 .wrapper-dashboard {
     display: flex;
     border: 2px solid orange;
-    height: 100vh;
 }
 
-.wrapper-sidebar {
+.wrapper-sidebar-dashboard {
     width: 30%;
     background-color: #00A376;
     padding: 40px 0;
+    transition: all .3s;
 }
 
-.wrapper-sidebar .content-sidebar .head-sidebar {
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,18 +20,18 @@
     color: white;
 }
 
-.wrapper-sidebar .content-sidebar .head-sidebar button:hover {
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar button:hover {
     background-color: whitesmoke;
     color: #00A376;
     cursor: pointer;
 }
 
-.wrapper-sidebar .content-sidebar .head-sidebar button svg {
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar button svg {
     width: 18px;
     height: auto;
 }
 
-.wrapper-sidebar .content-sidebar .head-sidebar button {
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar button {
     padding: 5px 10px;
     border-radius: 5px;
     outline: 2px solid whitesmoke;
@@ -46,7 +46,7 @@
     position: relative;
 }
 
-.active::before{
+.active-sidebar::before{
     content: '';
     position: absolute;
     height: 50%;
@@ -73,6 +73,23 @@
     color: #00A376;
     cursor: pointer;
 }
+
+.hide {
+    width: 6%;
+}
+
+.hide .title {
+    display: none;
+}
+
+.hide span {
+    display: none;
+}
+
+.hide .btn {
+    margin-top: 3.2vh;
+}
+
 /* Sidebar End */
 
 /* Dashboard - Content Start */
@@ -104,5 +121,5 @@
 
 /* Dashboard - Content End */
 footer {
-    display: none;
+    /* display: none; */
 }

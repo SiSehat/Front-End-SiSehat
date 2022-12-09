@@ -65,7 +65,7 @@ const DashboardListDisease = () => {
             </div>
             <div className='dashboard-content'>
                 <Table
-                    height={400}
+                    height={400}    
                     data={sortData()}
                     sortColumn={sortColumn}
                     sortType={sortType}

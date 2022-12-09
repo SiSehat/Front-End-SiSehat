@@ -5,6 +5,7 @@ import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import GeocoderControl from "./controler/geocoder";
 import GeolocationUser from "./controler/geolocationUser";
 import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/FooterBar";
 
 export default function Map() {
     const [expand, setExpand] = useState(false);
@@ -156,7 +157,7 @@ export default function Map() {
                     </div>
                 </div>
             </main>
-
+            <Footer />
         </>
     )
 }
