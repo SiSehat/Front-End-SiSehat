@@ -1,0 +1,136 @@
+/* Sidebar Start */
+.wrapper-dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.wrapper-sidebar-dashboard {
+    width: 30%;
+    background-color: #00A376;
+    padding: 40px 0;
+    transition: all .3s;
+}
+
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 35px;
+    margin-bottom: 5vh;
+    color: white;
+}
+
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar button:hover {
+    background-color: whitesmoke;
+    color: #00A376;
+    cursor: pointer;
+}
+
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar button svg {
+    width: 18px;
+    height: auto;
+}
+
+.wrapper-sidebar-dashboard .content-sidebar .head-sidebar button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: 2px solid whitesmoke;
+    background-color: transparent;
+    color: white;
+    border: none;
+}
+
+.item-sidebar {
+    padding: 20px 35px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.active-sidebar::before{
+    content: '';
+    position: absolute;
+    height: 50%;
+    right: 0;
+    background-color: whitesmoke;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.item-sidebar a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 400;
+}
+
+.item-sidebar svg {
+    width: 20px;
+    height: auto;
+    margin-right: 5vh;
+}
+
+.item-sidebar:hover, .item-sidebar:hover a  {
+    background-color: whitesmoke;
+    color: #00A376;
+    cursor: pointer;
+}
+
+.hide {
+    width: 6%;
+}
+
+.hide .title {
+    display: none;
+}
+
+.hide span {
+    display: none;
+}
+
+.hide .btn {
+    margin-top: 3.2vh;
+}
+
+/* Sidebar End */
+
+/* Dashboard - Content Start */
+
+.dashboard-list {
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 40px 0;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.dashboard-list .dashboard-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    color: black;
+}
+
+.dashboard-content .thead .rs-table-cell-content {
+    background-color: #00A376;
+    color: white;
+    border-right: 1px solid white;
+    font-weight: 500;
+}
+
+.dashboard-content .thead .rs-table-cell-content:hover {
+    background-color: #14d39d;
+}
+
+.say-hello{
+    background-color: #7bffda4a;
+    margin: 5vh 0;
+    margin-bottom: 3.8vh;
+    padding: 10px 8vh;
+    border-radius: 10px;
+    color: #00a375bc;
+}
+
+/* Dashboard - Content End */
+footer {
+    /* display: none; */
+}
