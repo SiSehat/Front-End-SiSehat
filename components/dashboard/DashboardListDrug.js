@@ -5,6 +5,7 @@ import 'rsuite-table/dist/css/rsuite-table.css'; // or 'rsuite-table/dist/css/rs
 import dataDrug from '../../data/template_drugs';
 import ModalFormDrug from '../modal/modalFormDrug';
 import ModalItem from '../modal/modalItem';
+import ModalItemDrug from '../modal/modalItemDrug';
 
 const ActionCell = ({ rowData, dataKey, onClick, ...props }) => {
     return (
@@ -67,7 +68,7 @@ const DashboardListDrug = ({ datas }) => {
             case 'add': 
                 setSelectedData(null)   
                 setSelectedEditData(null)
-                setSelectedPOSTData({data: dataDrug.data})
+                setSelectedPOSTData({...dataDrug})
                 modal.current.style.display = "block"
                 window.onclick = function(event) {
                     if (event.target == modal.current) {
@@ -77,7 +78,7 @@ const DashboardListDrug = ({ datas }) => {
             break;
             
             case 'delete': 
-                const confirmDelete = confirm(`Yakin ingin hapus data ${data.data.title} ?`)
+                const confirmDelete = confirm(`Yakin ingin hapus data ${data.title} ?`)
                 if (confirmDelete) {
                     handleRemoveDisease(data.id)
                 }
@@ -128,24 +129,24 @@ const DashboardListDrug = ({ datas }) => {
                     >
                     <Column width={150} fixed sortable>
                         <HeaderCell style={{borderTopLeftRadius: '12px'}} className='thead'>Title</HeaderCell>
-                        <Cell dataKey="data.title" />
+                        <Cell dataKey="title" />
                     </Column>
 
                     <Column width={200}  fixed sortable>
                         <HeaderCell className='thead'>
                             categories
                         </HeaderCell>
-                        <Cell dataKey="data.categories" />
+                        <Cell dataKey="categories" />
                     </Column>
 
                     <Column width={200} >
                         <HeaderCell className='thead'>Pencegahan</HeaderCell>
-                        <Cell dataKey="data.medication" />
+                        <Cell dataKey="medication" />
                     </Column>
 
                     <Column width={300}>
                         <HeaderCell className='thead'>reviewer_name</HeaderCell>
-                        <Cell dataKey="data.reviewer_name" />
+                        <Cell dataKey="reviewer_name" />
                     </Column>
 
                     <Column flexGrow={2}>
@@ -161,7 +162,7 @@ const DashboardListDrug = ({ datas }) => {
                     {/* <!-- Modal content --> */}
                     {
                         selectedData && (
-                            <ModalItem selectedData={selectedData} />
+                            <ModalItemDrug selectedData={selectedData} />
                         )
                     }
                     {

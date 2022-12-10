@@ -17,7 +17,7 @@ export default function Disease(props) {
     const [diseases, setDiseases] = useState(null);
     
     useEffect(() => {
-        setDiseases(props.datasDisease)
+        setDiseases(props.data)
     }, [])
     
     return (

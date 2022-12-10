@@ -6,14 +6,12 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         ...selectedData
     });
 
+    console.log(selectedEditData);
     const handleTitle = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    title: element.target.value
-                }
+                ...prevState,
+                title: element.target.value
             }
         })
     }
@@ -22,11 +20,8 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         handlePublishDate();
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    reviewer_name: element.target.value
-                }
+                ...prevState,
+                reviewer_name: element.target.value
             }
         })
     }
@@ -34,11 +29,9 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
     const handlePublishDate = () => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    publish_date: new Date().toISOString().toString()
-                }
+                ...prevState,
+                publish_date: new Date().toISOString().toString()
+                
             }
         })
     }
@@ -47,11 +40,8 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         const symptoms = element.target.value.split(',')
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    symptom: [...symptoms]
-                }
+                ...prevState,
+                symptom: [...symptoms]
             }
         })
     }
@@ -60,11 +50,9 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         const drugs = element.target.value.split(',')
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    obat: [...drugs]
-                }
+                ...prevState,
+                obat: [...drugs]
+                
             }
         })
     }
@@ -73,11 +61,8 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         const diagonsis = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    diagonsis: [...diagonsis]
-                }
+                ...prevState,
+                diagonsis: [...diagonsis]
             }
         })
     }
@@ -85,11 +70,8 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
     const handleCategories = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    categories: element.target.value
-                }
+                ...prevState,
+                categories: element.target.value
             }
         })
     }
@@ -97,11 +79,8 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
     const handleMedication = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    medication: element.target.value
-                }
+                ...prevState,
+                medication: element.target.value
             }
         })
     }
@@ -109,13 +88,10 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
     const handleAbout = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    about: element.target.value,
-                    short_desc: element.target.value.slice(0, 1000),
-                    thumbnail_url: 'not_allowed'
-                }
+                ...prevState,
+                about: element.target.value,
+                short_desc: element.target.value.slice(0, 1000),
+                thumbnail_url: 'not_allowed'
             }
         })
     }
@@ -132,7 +108,7 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(selectedEditData.data)
+                    body: JSON.stringify(selectedEditData)
                 })
     
                 const result = await rawResult.json()
@@ -147,14 +123,17 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(selectedEditData.data)
+                body: JSON.stringify(selectedEditData)
             })
 
             const result = await rawResult.json()
 
             if (result.status === 'fail') throw result.message;
             toast.update(idToast, {render: 'berhasil ditambah', type: 'success', isLoading: false, autoClose: 5000})
-            setSelectedData(result)
+            setSelectedData((prevState) => [
+                ...prevState,
+                result.data
+            ])
         } catch (error) {
             console.log(error);
             toast.update(idToast, {render: `${error[0].context.label} wajib diisi`, type: 'error', isLoading: false, autoClose: 5000})
@@ -170,44 +149,44 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
                 <div className="modal-multiple-form">
                     <span>
                         <label>Reviewer Name </label>
-                        <input type='text' value={selectedEditData.data.reviewer_name} onChange={handleReviewerName}/>
+                        <input type='text' value={selectedEditData.reviewer_name} onChange={handleReviewerName}/>
                     </span>
                     <span>
                         <label>publish_date </label>
-                        <input type='text' value={selectedEditData.data.publish_date} disabled={true} onChange={handlePublishDate}/>
+                        <input type='text' value={selectedEditData.publish_date} disabled={true} onChange={handlePublishDate}/>
                     </span>
                 </div>
             
                 <div>
                     <label>Title: </label>
-                    <input type='text' value={ selectedEditData.data.title } onChange={handleTitle} />
+                    <input type='text' value={ selectedEditData.title } onChange={handleTitle} />
                 </div>
                 <div>
                     <label>Categories: </label>
-                    <input type='text' value={ selectedEditData.data.categories } onChange={handleCategories} />
+                    <input type='text' value={ selectedEditData.categories } onChange={handleCategories} />
                 </div>
                 <div>
                     <label>about: </label>
-                    <textarea type='text' value={ selectedEditData.data.about } onChange={handleAbout} />
+                    <textarea type='text' value={ selectedEditData.about } onChange={handleAbout} />
                 </div>
                 <div>
                     <label>symptom: </label>
-                    <input type='text' value={ selectedEditData.data.symptom.toString() } onChange={handleSymptom} />    
+                    <input type='text' value={ selectedEditData.symptom.toString() } onChange={handleSymptom} />    
                     <p>lebih dari 1 ? tambahkan dengan koma (,) </p>
                 </div>
                 <div>
                     <label>obat: </label>
-                    <textarea type='text' value={ selectedEditData.data.obat.toString() } onChange={handleObat} />
+                    <textarea type='text' value={ selectedEditData.obat.toString() } onChange={handleObat} />
                     <p>lebih dari 1 ? tambahkan dengan koma (,) </p>
                 </div>
                 <div>
                     <label>Diagnosis: </label>
-                    <textarea type='text' value={ selectedEditData.data.diagonsis.toString() } onChange={handleDiagnosis} />
+                    <textarea type='text' value={ selectedEditData.diagonsis.toString() } onChange={handleDiagnosis} />
                     <p>lebih dari 1 ? tambahkan dengan koma (,) </p>
                 </div>
                 <div>
                     <label>Pencegahan: </label>
-                    <textarea type='text' value={ selectedEditData.data.medication.toString() } onChange={handleMedication} />
+                    <textarea type='text' value={ selectedEditData.medication.toString() } onChange={handleMedication} />
                 </div>
                 <div>
                     <button type='submit'>Submit</button>

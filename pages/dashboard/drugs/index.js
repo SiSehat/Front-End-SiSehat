@@ -12,7 +12,7 @@ export async function getServerSideProps(context) {
     }
 }
 
-export default function Drugs(props) {
+export default function Drugs({ data }) {
   return (
       <>
           <Head>
@@ -23,7 +23,7 @@ export default function Drugs(props) {
           <main>
               <div className='wrapper-dashboard'>
                   <SideBar />
-                  <DashboardListDrug datas={props.datasDrug} />
+                  <DashboardListDrug datas={data} />
               </div>
           </main>
       </>

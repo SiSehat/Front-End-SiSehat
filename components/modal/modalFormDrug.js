@@ -6,16 +6,11 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
         ...selectedData
     });
 
-    console.log(selectedData);
-
     const handleTitle = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    title: element.target.value
-                }
+                ...prevState,
+                title: element.target.value
             }
         })
     }
@@ -24,11 +19,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
         handlePublishDate();
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    reviewer_name: element.target.value
-                }
+                ...prevState,
+                reviewer_name: element.target.value
             }
         })
     }
@@ -36,11 +28,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
     const handlePublishDate = () => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    publish_date: new Date().toISOString().toString()
-                }
+                ...prevState,
+                publish_date: new Date().toISOString().toString()
             }
         })
     }
@@ -48,11 +37,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
     const handleKegunaan = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    kegunaan: element.target.value
-                }
+                ...prevState,
+                kegunaan: element.target.value
             }
         })
     }
@@ -61,11 +47,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
         const drugs = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    rules: [...drugs]
-                }
+                ...prevState,
+                rules: [...drugs]
             }
         })
     }
@@ -74,11 +57,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
         const diagonsis = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    warning: [...diagonsis]
-                }
+                ...prevState,
+                warning: [...diagonsis]
             }
         })
     }
@@ -86,11 +66,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
     const handleCategories = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    categories: element.target.value
-                }
+                ...prevState,
+                categories: element.target.value
             }
         })
     }
@@ -99,11 +76,8 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
         const disease_related = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    disease_related: [...disease_related]
-                }
+                ...prevState,
+                disease_related: [...disease_related]
             }
         })
     }
@@ -111,13 +85,10 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
     const handleAbout = (element) => {
         setSelectedEditData((prevState) => {
             return {
-                id: prevState.id,
-                data: {
-                    ...prevState.data,
-                    about: element.target.value,
-                    short_desc: element.target.value.slice(0, 1000),
-                    thumbnail_url: 'not_allowed'
-                }
+                ...prevState,
+                about: element.target.value,
+                short_desc: element.target.value.slice(0, 1000),
+                thumbnail_url: 'not_allowed'
             }
         })
     }
@@ -134,7 +105,7 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify(selectedEditData.data)
+                    body: JSON.stringify(selectedEditData)
                 })
     
                 const result = await rawResult.json()
@@ -149,7 +120,7 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(selectedEditData.data)
+                body: JSON.stringify(selectedEditData)
             })
 
             const result = await rawResult.json()
@@ -160,7 +131,7 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
             setSelectedData((prevState) => {
                 return [
                     ...prevState,
-                    result.data
+                    result.data.data
                 ]
             })
         } catch (error) {
@@ -178,44 +149,44 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
                 <div className="modal-multiple-form">
                     <span>
                         <label>Reviewer Name </label>
-                        <input type='text' value={selectedEditData.data.reviewer_name} onChange={handleReviewerName}/>
+                        <input type='text' value={selectedEditData.reviewer_name} onChange={handleReviewerName}/>
                     </span>
                     <span>
                         <label>publish_date </label>
-                        <input type='text' value={selectedEditData.data.publish_date} disabled={true} onChange={handlePublishDate}/>
+                        <input type='text' value={selectedEditData.publish_date} disabled={true} onChange={handlePublishDate}/>
                     </span>
                 </div>
             
                 <div>
                     <label>Title: </label>
-                    <input type='text' value={ selectedEditData.data.title } onChange={handleTitle} />
+                    <input type='text' value={ selectedEditData.title } onChange={handleTitle} />
                 </div>
                 <div>
                     <label>Categories: </label>
-                    <input type='text' value={ selectedEditData.data.categories } onChange={handleCategories} />
+                    <input type='text' value={ selectedEditData.categories } onChange={handleCategories} />
                 </div>
                 <div>
                     <label>about: </label>
-                    <textarea type='text' value={ selectedEditData.data.about } onChange={handleAbout} />
+                    <textarea type='text' value={ selectedEditData.about } onChange={handleAbout} />
                 </div>
                 <div>
                     <label>Penyakit Terkait: </label>
-                    <input type='text' value={ selectedEditData.data.disease_related.toString() } onChange={handleDiseaseRelated} />    
+                    <input type='text' value={ selectedEditData.disease_related.toString() } onChange={handleDiseaseRelated} />    
                     <p>lebih dari 1 ? tambahkan dengan koma (;) </p>
                 </div>
                 <div>
                     <label>Aturan: </label>
-                    <textarea type='text' value={ selectedEditData.data.rules.toString() } onChange={handleRules} />
+                    <textarea type='text' value={ selectedEditData.rules.toString() } onChange={handleRules} />
                     <p>lebih dari 1 ? tambahkan dengan koma (;) </p>
                 </div>
                 <div>
                     <label>Peringatan: </label>
-                    <textarea type='text' value={ selectedEditData.data.warning.toString() } onChange={handleWarning} />
+                    <textarea type='text' value={ selectedEditData.warning.toString() } onChange={handleWarning} />
                     <p>lebih dari 1 ? tambahkan dengan koma (;) </p>
                 </div>
                 <div>
                     <label>Kegunaan: </label>
-                    <textarea type='text' value={ selectedEditData.data.kegunaan.toString() } onChange={handleKegunaan} />
+                    <textarea type='text' value={ selectedEditData.kegunaan.toString() } onChange={handleKegunaan} />
                 </div>
                 <div>
                     <button type='submit'>Submit</button>

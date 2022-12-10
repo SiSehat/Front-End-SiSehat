@@ -4,16 +4,16 @@ export default function ModalItem({ selectedData }) {
         <div className="modal-content">
             <span className="close">&times;</span>
             <div className='modal-head'>
-                <span>{selectedData.data.reviewer_name}</span>
-                <publish_date>{selectedData.data.publish_date}</publish_date>
+                <span>{selectedData.reviewer_name}</span>
+                <publish_date>{selectedData.publish_date}</publish_date>
             </div>
-            <h3>{selectedData.data.title}</h3>
-            <p>{selectedData.data.categories}</p>
-            <p>{selectedData.data.about}</p>
+            <h3>{selectedData.title}</h3>
+            <p>{selectedData.categories}</p>
+            <p>{selectedData.about}</p>
             <p>Gejala 
                 <ul>
                     {
-                        selectedData.data.symptom.map ((symptomData, i) => (
+                        selectedData.symptom.map ((symptomData, i) => (
                             <li key={i}>{symptomData}</li>
                         ))
                     }
@@ -22,7 +22,7 @@ export default function ModalItem({ selectedData }) {
             <p>obat
                 <ul>
                     {
-                        selectedData.data.obat.map ((symptomData, i) => (
+                        selectedData.obat.map ((symptomData, i) => (
                             <li key={i}>{symptomData}</li>
                         ))
                     }

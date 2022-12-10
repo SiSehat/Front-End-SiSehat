@@ -6,12 +6,20 @@ import styleDrug from '../../styles/Drug.module.css';
 import NavBar from '../../components/navbar/NavBar';
 import Footer from "../../components/FooterBar";
 
-const Drugs = () => {
-    const [medicines, setMedicines] = useState([])
+export async function getServerSideProps(context) {
+    const dataRaws = await fetch(`https://api-si-sehat.vercel.app/drug`);
+    const dataDrugs = await dataRaws.json();
+
+    return {
+        props: dataDrugs
+    }
+}
+
+const Drugs = ({ data }) => {
+    const [medicines, setMedicines] = useState(() => data)
 
     const onDrugsHandler = (drugs) => {
         setMedicines(drugs)
-        // console.log(drugs)
     }
 
     return (

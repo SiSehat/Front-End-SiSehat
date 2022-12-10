@@ -63,7 +63,7 @@ const DashboardListDisease = ({ datas }) => {
             case 'add': 
                 setSelectedData(null)   
                 setSelectedEditData(null)
-                setSelectedPOSTData({data: dataDisease})
+                setSelectedPOSTData({...dataDisease})
                 modal.current.style.display = "block"
                 window.onclick = function(event) {
                     if (event.target == modal.current) {
@@ -73,7 +73,7 @@ const DashboardListDisease = ({ datas }) => {
             break;
             
             case 'delete': 
-                const confirmDelete = confirm(`Yakin ingin hapus data ${data.data.title} ?`)
+                const confirmDelete = confirm(`Yakin ingin hapus data ${data.title} ?`)
                 if (confirmDelete) {
                     handleRemoveDisease(data.id)
                 }
@@ -123,24 +123,24 @@ const DashboardListDisease = ({ datas }) => {
                     >
                     <Column width={150} fixed sortable>
                         <HeaderCell style={{borderTopLeftRadius: '12px'}} className='thead'>Title</HeaderCell>
-                        <Cell dataKey="data.title" />
+                        <Cell dataKey="title" />
                     </Column>
 
                     <Column width={200}  fixed sortable>
                         <HeaderCell className='thead'>
                             categories
                         </HeaderCell>
-                        <Cell dataKey="data.categories" />
+                        <Cell dataKey="categories" />
                     </Column>
 
                     <Column width={200} >
                         <HeaderCell className='thead'>Pencegahan</HeaderCell>
-                        <Cell dataKey="data.medication" />
+                        <Cell dataKey="medication" />
                     </Column>
 
                     <Column width={300}>
                         <HeaderCell className='thead'>reviewer_name</HeaderCell>
-                        <Cell dataKey="data.reviewer_name" />
+                        <Cell dataKey="reviewer_name" />
                     </Column>
 
                     <Column flexGrow={2}>

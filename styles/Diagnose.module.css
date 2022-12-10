@@ -73,6 +73,11 @@
     gap: 10px;
 }
 
+.cardlist div {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Disease Styling */
 
 .disease__title {
@@ -338,6 +343,12 @@
 
     .cardList {
         justify-content: flex-start;
+        flex-direction: column;
+    }
+
+    .cardList div {
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .disease__title {
