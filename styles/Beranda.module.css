@@ -148,6 +148,7 @@
     border: 1px solid #00A376;
     border-radius: 10px;
     margin-right: 15px;
+    transition: all .2s ease;
 }
 
 .menuItem:hover {
