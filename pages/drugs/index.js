@@ -21,7 +21,7 @@ const Drugs = ({ data }) => {
     const onDrugsHandler = (drugs) => {
         setMedicines(drugs)
     }
-
+    
     return (
         <div>
             <Head>

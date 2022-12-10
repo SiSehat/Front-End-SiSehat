@@ -34,12 +34,16 @@ export default function Home() {
         </section>
         <h3 className={style.menuHeader}>Layanan</h3>
         <section className={style.menuSection}>
-          <div className={style.menuItem}>
-            <AiFillMedicineBox className={style.menuIcons} /> <strong>Cari obat </strong><p>Membantu Anda dalam menemukan obat sesuai kebutuhan</p>
-          </div>
-          <div className={style.menuItem}>
-            <RiHospitalFill className={style.menuIcons} /> <strong>Cari rumah sakit terdekat </strong><p>Menampilkan rumah sakit terdekat dari lokasi Anda</p>
-          </div>
+          <Link href='/drugs'>
+            <div className={style.menuItem}>
+              <AiFillMedicineBox className={style.menuIcons} /> <strong>Cari obat </strong><p>Membantu Anda dalam menemukan obat sesuai kebutuhan</p>
+            </div>
+          </Link>
+          <Link href='/map'>
+            <div className={style.menuItem}>
+              <RiHospitalFill className={style.menuIcons} /> <strong>Cari rumah sakit terdekat </strong><p>Menampilkan rumah sakit terdekat dari lokasi Anda</p>
+            </div>
+          </Link>
         </section>
       </main>
 

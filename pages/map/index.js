@@ -1,11 +1,12 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { TbLayoutSidebarLeftCollapse, TbLayoutSidebarRightCollapse } from 'react-icons/tb'
 import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import GeocoderControl from "./controler/geocoder";
 import GeolocationUser from "./controler/geolocationUser";
-import Navbar from "../../components/navbar/Navbar";
 import Footer from "../../components/FooterBar";
+import WrapperListHospitals from "../../components/map/wrapperHospitals";
+import Navbar from "../../components/navbar/Navbar";
 
 export default function Map() {
     const [expand, setExpand] = useState(false);
@@ -15,9 +16,9 @@ export default function Map() {
     const [selectedHospital, setSelectedHospital] = useState(null); 
     const [viewport, setViewport] = useState({
         latitude: -6.200000,
-        longitude: 106.816666,
-        zoom: 8,
-        pitch: 50
+        longitude: 121.916666,
+        zoom: 4,
+        pitch: 50,
     });
     const [userNowLocation, setUserNowLocation] = useState(null);
 
@@ -25,14 +26,39 @@ export default function Map() {
         const rawFaskes = await fetch(`https://api-si-sehat.vercel.app/hospitals?latlng=${latlng[0]},${latlng[1]}`)
         const dataFaskes = await rawFaskes.json();
         setUserNowLocation(dataFaskes);
+        console.log(dataFaskes);
     }
 
+    useEffect(() => {
+        setViewport((prevState) => {
+            return {
+                ...prevState, 
+                width: window.innerWidth, 
+                height: window.innerHeight
+            }
+        })
+
+        async function getRandomHospital() {
+            const rawData = await fetch('https://api-si-sehat.vercel.app/hospitals/random')
+            const dataRandomHospital = await rawData.json();
+
+            console.log(dataRandomHospital);
+            return dataRandomHospital
+        }
+
+        async function getDataRandomHospital() {
+            const dataRandomHospital = await getRandomHospital();
+            setUserNowLocation(dataRandomHospital);
+        }
+
+        getDataRandomHospital();
+    },[])
+
     return (
-        <>
+        <>  
             <header>
-                <Navbar active="map"  />
+                <Navbar active="map" />
             </header>
-            
             <main className="container">
                 <div className="wrapper-map">
                     <ReactMapGl 
@@ -50,12 +76,13 @@ export default function Map() {
                                     {
                                         userNowLocation.hospital.map((hospital, index) => {
                                             const latlng = hospital.LatLongFaskes.replace('http://maps.google.co.id/?q=', '').split(',')
+                                            if (latlng.length === 1) return null
                                             return (
                                                 <Marker
                                                     key={index} 
                                                     anchor='center'
-                                                    latitude={latlng[0]}
-                                                    longitude={latlng[1]}
+                                                    latitude={parseFloat(latlng[0])}
+                                                    longitude={parseFloat(latlng[1])}
                                                 >
                                                     <img
                                                         src="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678111-map-marker-512.png"
@@ -89,20 +116,18 @@ export default function Map() {
                                     <h2>{selectedHospital.NamaFaskes}</h2>
                                     <span><b>{selectedHospital.Provinsi}</b></span> | <span>{selectedHospital.AlamatFaskes}</span>
                                     <p>{selectedHospital.TelpFaskes}</p>
-                                    <a href={selectedHospital.LatLongFaskes}>Go {selectedHospital.TipeFaskes}</a>
+                                    <a href={selectedHospital.LatLongFaskes} target="_blank">Go {selectedHospital.TipeFaskes}</a>
                                 </Popup>
                             )
                         }
                     </ReactMapGl>
-                    {/* <div ref={mapContainer} id="map" /> */}
                 </div>
-
 
                 <div className={ expand ? 'wrapper-sidebar' : 'wrapper-sidebar close' }>
                     <button 
                         type="button" 
                         onClick={() => setExpand(!expand)} 
-                        style={{ right: expand ? '-5vh' : '-25vh' }} 
+                        className={expand ? 'btn-right' : 'btn-right-close'}
                         title="expand-sidebar" 
                         id="expand-list-hospital">
 
@@ -112,7 +137,6 @@ export default function Map() {
                         }
                     </button>
                     <div className="search" ref={searchHosptial}>
-                        {/* <input type="text" placeholder="Cari rumah sakit ...." /> */}
                         <GeocoderControl
                             mapboxAccessToken="pk.eyJ1Ijoic2F5YWthMTIiLCJhIjoiY2trd2prZXg2MWZ4YTJ3cGgwNjE5dGszMiJ9.eIRf6IqzvUcxGyrJ1-Mj8w"
                             containerRef={searchHosptial}
@@ -126,38 +150,12 @@ export default function Map() {
                             myLocation={findFaskes}/>
                     </div>
 
+                    
                     <div className="wrapper-list">
-                        <div className="item-hospital">
-                            <div className="hospital">
-                                <img src="/hospital.svg" alt="gambar rumah sakit" />
-                            </div>
-                            <section>
-                                <h2>Title Rumah Sakit</h2>
-                                <p>Buka 24Jam</p>
-                            </section>
-                        </div>
-                        <div className="item-hospital">
-                            <div className="hospital">
-                                <img src="/hospital.svg" alt="gambar rumah sakit" />
-                            </div>
-                            <section>
-                                <h2>Title Rumah Sakit</h2>
-                                <p>Buka 24Jam</p>
-                            </section>
-                        </div>
-                        <div className="item-hospital">
-                            <div className="hospital">
-                                <img src="/hospital.svg" alt="gambar rumah sakit" />
-                            </div>
-                            <section>
-                                <h2>Title Rumah Sakit</h2>
-                                <p>Buka 24Jam</p>
-                            </section>
-                        </div>
+                        <WrapperListHospitals hospitals={userNowLocation} />
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

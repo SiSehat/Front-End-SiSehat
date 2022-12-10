@@ -1,3 +1,7 @@
+nav ul {
+  z-index: 3;
+}
+
 main.container {
   display: flex;
   flex-direction: row-reverse;
@@ -16,7 +20,6 @@ main.container {
 
 #expand-list-hospital {
   position: absolute;
-  right: -24vh;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -24,6 +27,14 @@ main.container {
   background-color: whitesmoke;
   font-weight: 300;
   transition: all 0.3s;
+}
+
+.btn-right-close {
+  right: -25vh;
+}
+
+.btn-right {
+  right: -5vh;
 }
 
 .expand-hospitals {
@@ -89,6 +100,7 @@ main.container {
   margin-bottom: 30px;
   box-shadow: 2px 2px 5px 1px #00000022;
   border-radius: 15px;
+  padding-top: 10px;
   padding-bottom: 10px;
   transition: all 0.3s;
 }
@@ -104,6 +116,50 @@ main.container {
 
 .item-hospital h2 {
   margin: 2vh 0;
+}
+
+.wrapper-list .item-hospital #tipeFaskes {
+  padding: 5px 10px;
+  background-color: #00a376;
+  display: inline-block;
+  color: white;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.wrapper-list .item-hospital span:nth-child(2) {
+  margin: 0 5px;
+}
+
+.wrapper-list .item-hospital button {
+  background-color: whitesmoke;
+  border: none;
+  padding: 5px;
+  outline: 1.8px solid #00a376;
+  border-radius: 5px;
+}
+
+.wrapper-list .item-hospital h3 {
+  margin-top: 5px;
+}
+.wrapper-list .item-hospital p {
+  font-size: 13px;
+}
+
+.wrapper-list .item-hospital a {
+  text-decoration: none;
+  margin: 10px 0;
+  display: inline-block;
+  padding: 5px;
+  outline: 2px solid #00a376;
+  border-radius: 5px;
+  color: black;
+  font-size: 13px;
+}
+
+.wrapper-list .item-hospital a:hover {
+  background-color: #00a376;
+  color: white;
 }
 
 /* Map ================= */
@@ -123,18 +179,21 @@ main.container {
 .geocoder-dropdown-item {
   padding: 5px;
 }
+
 .geocoder-dropdown-icon {
   margin-right: 10px;
 }
+
 .geocoder-dropdown-text {
   color: #5a3fc0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: larger;
 }
+
 .wrapper-feature {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 5vh;
+    margin-bottom: 2vh;
 }
 
 .wrapper-feature .mapboxgl-ctrl button {
@@ -188,8 +247,4 @@ button.mapboxgl-popup-close-button:hover {
   background-color: red;
   color: white;
   border-top-right-radius: 10px;
-}
-
-footer {
-  top: unset;
 }

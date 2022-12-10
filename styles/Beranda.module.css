@@ -135,6 +135,10 @@
     margin: 0 auto;
 }
 
+.menuSection a {
+    text-decoration: none;
+}
+
 .menuItem {
     width: 100%;
     display: grid;
@@ -144,6 +148,14 @@
     border: 1px solid #00A376;
     border-radius: 10px;
     margin-right: 15px;
+}
+
+.menuItem:hover {
+    background-color: #00A376;
+}
+
+.menuItem:hover strong,.menuItem:hover p,.menuItem:hover svg {
+    color: whitesmoke;
 }
 
 .menuItem strong {

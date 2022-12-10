@@ -1,4 +1,3 @@
-import style from '../styles/Beranda.module.css';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -11,7 +10,7 @@ const Footer = () => {
       <ul>
         <h3>Layanan</h3>
         <li><Link href="/drugs">Rekomendasi Obat</Link></li>
-        <li><Link href="#">Rumah Sakit Terdekat</Link></li>
+        <li><Link href="/map">Rumah Sakit Terdekat</Link></li>
       </ul>
       <ul>
         <h3>Info Obat</h3>
