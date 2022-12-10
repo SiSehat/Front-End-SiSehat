@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 
-export default function ModalForm({ method, selectedData, setSelectedData }) {
+export default function ModalFormDrug({ method, selectedData, setSelectedData }) {
     const [selectedEditData, setSelectedEditData] = useState({
         ...selectedData
     });
+
+    console.log(selectedData);
 
     const handleTitle = (element) => {
         setSelectedEditData((prevState) => {
@@ -43,40 +45,39 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         })
     }
 
-    const handleSymptom = (element) => {
-        const symptoms = element.target.value.split(',')
+    const handleKegunaan = (element) => {
         setSelectedEditData((prevState) => {
             return {
                 id: prevState.id,
                 data: {
                     ...prevState.data,
-                    symptom: [...symptoms]
+                    kegunaan: element.target.value
                 }
             }
         })
     }
 
-    const handleObat = (element) => {
-        const drugs = element.target.value.split(',')
+    const handleRules = (element) => {
+        const drugs = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
                 id: prevState.id,
                 data: {
                     ...prevState.data,
-                    obat: [...drugs]
+                    rules: [...drugs]
                 }
             }
         })
     }
 
-    const handleDiagnosis = (element) => {
+    const handleWarning = (element) => {
         const diagonsis = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
                 id: prevState.id,
                 data: {
                     ...prevState.data,
-                    diagonsis: [...diagonsis]
+                    warning: [...diagonsis]
                 }
             }
         })
@@ -94,13 +95,14 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         })
     }
 
-    const handleMedication = (element) => {
+    const handleDiseaseRelated = (element) => {
+        const disease_related = element.target.value.split(';')
         setSelectedEditData((prevState) => {
             return {
                 id: prevState.id,
                 data: {
                     ...prevState.data,
-                    medication: element.target.value
+                    disease_related: [...disease_related]
                 }
             }
         })
@@ -127,7 +129,7 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
         
         try {
             if (method === 'PUT') {
-                const rawResult = await fetch(`https://api-si-sehat.vercel.app/disease/${selectedEditData.id}`, {
+                const rawResult = await fetch(`https://api-si-sehat.vercel.app/drug/${selectedEditData.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -142,7 +144,7 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
                 return;
             } 
 
-            const rawResult = await fetch(`https://api-si-sehat.vercel.app/disease`, {
+            const rawResult = await fetch(`https://api-si-sehat.vercel.app/drug`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -154,7 +156,13 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
 
             if (result.status === 'fail') throw result.message;
             toast.update(idToast, {render: 'berhasil ditambah', type: 'success', isLoading: false, autoClose: 5000})
-            setSelectedData(result)
+            console.log(result);
+            setSelectedData((prevState) => {
+                return [
+                    ...prevState,
+                    result.data
+                ]
+            })
         } catch (error) {
             console.log(error);
             toast.update(idToast, {render: `${error[0].context.label} wajib diisi`, type: 'error', isLoading: false, autoClose: 5000})
@@ -191,23 +199,23 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
                     <textarea type='text' value={ selectedEditData.data.about } onChange={handleAbout} />
                 </div>
                 <div>
-                    <label>symptom: </label>
-                    <input type='text' value={ selectedEditData.data.symptom.toString() } onChange={handleSymptom} />    
-                    <p>lebih dari 1 ? tambahkan dengan koma (,) </p>
+                    <label>Penyakit Terkait: </label>
+                    <input type='text' value={ selectedEditData.data.disease_related.toString() } onChange={handleDiseaseRelated} />    
+                    <p>lebih dari 1 ? tambahkan dengan koma (;) </p>
                 </div>
                 <div>
-                    <label>obat: </label>
-                    <textarea type='text' value={ selectedEditData.data.obat.toString() } onChange={handleObat} />
-                    <p>lebih dari 1 ? tambahkan dengan koma (,) </p>
+                    <label>Aturan: </label>
+                    <textarea type='text' value={ selectedEditData.data.rules.toString() } onChange={handleRules} />
+                    <p>lebih dari 1 ? tambahkan dengan koma (;) </p>
                 </div>
                 <div>
-                    <label>Diagnosis: </label>
-                    <textarea type='text' value={ selectedEditData.data.diagonsis.toString() } onChange={handleDiagnosis} />
-                    <p>lebih dari 1 ? tambahkan dengan koma (,) </p>
+                    <label>Peringatan: </label>
+                    <textarea type='text' value={ selectedEditData.data.warning.toString() } onChange={handleWarning} />
+                    <p>lebih dari 1 ? tambahkan dengan koma (;) </p>
                 </div>
                 <div>
-                    <label>Pencegahan: </label>
-                    <textarea type='text' value={ selectedEditData.data.medication.toString() } onChange={handleMedication} />
+                    <label>Kegunaan: </label>
+                    <textarea type='text' value={ selectedEditData.data.kegunaan.toString() } onChange={handleKegunaan} />
                 </div>
                 <div>
                     <button type='submit'>Submit</button>

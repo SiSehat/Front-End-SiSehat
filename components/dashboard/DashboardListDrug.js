@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
 import 'rsuite-table/dist/css/rsuite-table.css'; // or 'rsuite-table/dist/css/rsuite-table.css'
-import dataDisease from '../../data/template_disease';
-import ModalForm from '../modal/modalForm';
+import dataDrug from '../../data/template_drugs';
+import ModalFormDrug from '../modal/modalFormDrug';
 import ModalItem from '../modal/modalItem';
 
 const ActionCell = ({ rowData, dataKey, onClick, ...props }) => {
@@ -18,11 +18,11 @@ const ActionCell = ({ rowData, dataKey, onClick, ...props }) => {
     );
 };
 
-const DashboardListDisease = ({ datas }) => {
+const DashboardListDrug = ({ datas }) => {
 
     if (datas === null) return 
     
-    const [disease, setDisease] = useState(datas)
+    const [drug, setDrug] = useState([])
     const [loading, setLoading] = useState(false);
     const [time, setTime] = useState(null);
     const [selectedData, setSelectedData] = useState(null);
@@ -34,6 +34,10 @@ const DashboardListDisease = ({ datas }) => {
         setTime(new Date().toLocaleString('id'))
     }, 10000);
 
+
+    useEffect(() => {
+        setDrug(datas)
+    }, [])
 
     const handleClick = (data, actionType) => {
         switch (actionType) {
@@ -63,7 +67,7 @@ const DashboardListDisease = ({ datas }) => {
             case 'add': 
                 setSelectedData(null)   
                 setSelectedEditData(null)
-                setSelectedPOSTData({data: dataDisease})
+                setSelectedPOSTData({data: dataDrug.data})
                 modal.current.style.display = "block"
                 window.onclick = function(event) {
                     if (event.target == modal.current) {
@@ -84,13 +88,14 @@ const DashboardListDisease = ({ datas }) => {
 
     const handleRemoveDisease = async (id) => {
         const idToast = toast.loading('Tunggu sebentar')
+        
         try {
-            const dataRaw = await fetch(`https://api-si-sehat.vercel.app/disease/${id}`, {
+            const dataRaw = await fetch(`https://api-si-sehat.vercel.app/drug/${id}`, {
                 method: 'DELETE'
             })
             
-            const diseasesDelete = disease.filter((disease) => disease.id !== id)
-            setDisease(diseasesDelete)
+            const drugDelete = drug.filter((drug) => drug.id !== id)
+            setDrug(drugDelete)
             toast.update(idToast, {render: 'berhasil dihapus', type: 'success', isLoading: false, autoClose: 5000})
         } catch (error) {
             console.log(error);
@@ -101,7 +106,7 @@ const DashboardListDisease = ({ datas }) => {
     return (
         <div className='dashboard-list'>
             <div className='dashboard-head'>
-                <h2>Daftar Penyakit</h2>
+                <h2>Daftar Obat</h2>
                 <p>{time}</p>
             </div>
             <div className='say-hello'>
@@ -114,7 +119,7 @@ const DashboardListDisease = ({ datas }) => {
 
                 <Table
                     height={400}    
-                    data={disease}
+                    data={drug}
                     loading={loading}
                     style={{marginTop: '20px'}}
                     onRowClick={data => {
@@ -161,12 +166,12 @@ const DashboardListDisease = ({ datas }) => {
                     }
                     {
                         selectedEditData && (
-                            <ModalForm method={'PUT'} selectedData={selectedEditData} />
+                            <ModalFormDrug method={'PUT'} selectedData={selectedEditData} />
                         )
                     }
                     {
                         selectedPOSTData && (
-                            <ModalForm method={'add'} selectedData={selectedPOSTData} setSelectedData={setDisease} />
+                            <ModalFormDrug method={'add'} selectedData={selectedPOSTData} setSelectedData={setDrug} />
                         )
                     }
                 </div>
@@ -175,4 +180,4 @@ const DashboardListDisease = ({ datas }) => {
     )
 }
 
-export default DashboardListDisease
+export default DashboardListDrug

@@ -30,7 +30,7 @@ export default function Disease(props) {
             <main>
                 <div className='wrapper-dashboard'>
                     <SideBar />
-                    <DashboardListDisease diseases={diseases} />
+                    <DashboardListDisease datas={diseases} />
                 </div>
             </main>
         </>

@@ -38,3 +38,63 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.modal-content form {
+  margin-top: 8vh;
+}
+
+.modal-content span {
+  width: 100%;
+}
+
+.modal-content label{
+  text-transform: capitalize;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.modal-content div p {
+  margin-top: 2.5px;
+  font-size: 13px;
+  color: red;
+  font-weight: 500;
+}
+
+.modal-content textarea {
+  padding: 10px;
+  border-radius: 6px;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.modal-content form div {
+  margin: 10px 0;
+}
+
+.modal-content .modal-multiple-form span:nth-child(2) {
+  margin-left: 10px;
+}
+
+.modal-content .modal-multiple-form {
+  display: flex;
+  width: 100%;
+}
+
+.modal-content form button {
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: none;
+  outline: 2px solid #00A376;
+}
+
+.modal-content form button:hover {
+  background-color: #00A376;
+  color: white;
+  cursor: pointer;
+}

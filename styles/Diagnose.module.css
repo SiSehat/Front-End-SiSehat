@@ -32,6 +32,11 @@
     color: #505050;
 }
 
+.wrapper_list_drug {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .input {
     border: 1px solid #BEBEBE;
     padding: 10px;
@@ -96,11 +101,18 @@
     /* green */
     border: 1px solid #00A376;
     border-radius: 10px;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .disease__card:hover {
     cursor: pointer;
+}
+
+.disease__card div {
+    height: 20vh;
+    overflow: hidden;
 }
 
 .disease__header {
@@ -138,10 +150,7 @@
 }
 
 .disease__button {
-    display: flex;
-    width: 35%;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
     color: white;
     border: 0px;
     padding: 10px;
@@ -242,6 +251,7 @@
         padding-left: 5%;
         padding-right: 5%;
         padding-bottom: 100px;
+        min-height: 60.7vh;
     }
 
     .header {
@@ -336,8 +346,8 @@
     }
 
     .disease__card {
-        width: 40%;
-        justify-content: center;
+        width: 30%;
+        justify-content: space-between;
         margin-left: 0;
     }
 }

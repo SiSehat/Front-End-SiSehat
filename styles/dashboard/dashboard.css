@@ -110,6 +110,17 @@
     color: black;
 }
 
+.dashboard-content .thead .rs-table-cell-content {
+    background-color: #00A376;
+    color: white;
+    border-right: 1px solid white;
+    font-weight: 500;
+}
+
+.dashboard-content .thead .rs-table-cell-content:hover {
+    background-color: #14d39d;
+}
+
 .say-hello{
     background-color: #7bffda4a;
     margin: 5vh 0;

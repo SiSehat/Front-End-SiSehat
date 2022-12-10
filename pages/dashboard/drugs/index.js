@@ -1,23 +1,31 @@
 import Head from 'next/head'
-import Link from 'next/link'
-import DashboardListDisease from '../../components/dashboard/DashboardListDisease'
-import SideBar from '../../components/dashboard/SideBar'
-import Footer from '../../components/FooterBar'
+import { useEffect, useState } from 'react'
+import DashboardListDrug from '../../../components/dashboard/DashboardListDrug'
+import SideBar from '../../../components/dashboard/SideBar'
 
-export default function Drugs() {
-    return (
-        <>
+export async function getServerSideProps(context) {
+    const drugRaw = await fetch('https://api-si-sehat.vercel.app/drug')
+    const drug = await drugRaw.json()
+
+    return {
+        props: drug
+    }
+}
+
+export default function Drugs(props) {
+  return (
+      <>
           <Head>
-            <title>
+              <title>
               Dashboard
-            </title>
+              </title>
           </Head>
           <main>
-            <div className='wrapper-dashboard'>
-              <SideBar />
-              <DashboardListDisease />
-            </div>
+              <div className='wrapper-dashboard'>
+                  <SideBar />
+                  <DashboardListDrug datas={props.datasDrug} />
+              </div>
           </main>
-        </>
-    )
+      </>
+  )
 }
