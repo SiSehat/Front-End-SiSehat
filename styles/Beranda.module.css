@@ -1,42 +1,4 @@
-.navSiSehat {
-    display: flex;
-    text-decoration: none;
-    width: 89px;
-    height: 29px;
-    margin-right: 40%;
-
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    /* identical to box height */
-    letter-spacing: -0.017em;
-
-    color: #FFFFFF;
-}
-
-.navItem {
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    margin-right: 40px;
-    color: white;
-    align-items: center;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
-}
-
-.navList {
-    display: flex;
-}
-
-.navLink{
-    text-decoration: none;
-    color: white;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 .jumbotron {
     display: grid;
@@ -49,6 +11,7 @@
     width: 100%;
     margin: 0 auto;
     border: 0;
+    overflow: hidden;
 }
 
 .jumbotronHeader {
@@ -81,8 +44,7 @@
 
 .buttonMedicineSeacrh {
     border: 1px solid white;
-    padding: 10px;
-    position: absolute;
+    padding: 10px; 
     left: 0;
     margin-left: 13rem;
     text-decoration: none;
@@ -111,19 +73,6 @@
     background: #FFFFFF;
     z-index: 0;
     border-radius: 260px 20px 20px 20px;
-}
-
-.nurse {
-    /* hero-image-4-edited 1 */
-
-    position: absolute;
-    width: 600px;
-    height: 300px;
-    left: 700px;
-    top: 200px;
-
-    background: url("../public/nurse.png");
-
 }
 
 .seacrhMedicine1 {
@@ -182,16 +131,18 @@
 
 .menuSection {
     display: flex;
-    width: 1000px;
     justify-content: center;
     margin: 0 auto;
 }
 
+.menuSection a {
+    text-decoration: none;
+}
+
 .menuItem {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    width: 400px;
     padding: 20px;
     background: #FFFFFF;
     border: 1px solid #00A376;
@@ -199,9 +150,16 @@
     margin-right: 15px;
 }
 
+.menuItem:hover {
+    background-color: #00A376;
+}
+
+.menuItem:hover strong,.menuItem:hover p,.menuItem:hover svg {
+    color: whitesmoke;
+}
+
 .menuItem strong {
     display: flex;
-    margin-left: -150px;
 
     font-family: 'Nunito Sans', sans-serif;
     font-style: normal;
@@ -234,44 +192,161 @@
     color: #00A376;
 }
 
-.footerLeft {
-    margin-right: 35%;
-    text-decoration: none;
-    display: block;
-    color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
 
-    color: #E1E1E1;
+
+@media screen and (min-width: 350px) {
+    .navList {
+        /* display: none; */
+        display: none;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 10px;
+        top: 4em;
+        background-color: #007a58;
+        right: 0;
+    }
+
+    .navItem {
+        text-transform: uppercase;
+        padding: 1rem;
+        margin: 0 auto;
+    }
+
+    .navSiSehat {
+        margin-right: 0;
+        position: absolute;
+        left: 0;
+        margin-left: 5%;
+    }
+
+    .nurse {
+        display: none;
+    }
+
+    .menuSection {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .menuItem {
+        margin: 0 auto;
+    }
+
+    .jumbotron {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 300px;
+        padding: 0;
+    }
+
+    .jumbotronHeader {
+        margin-left: 0px;
+        margin-top: -10px;
+        width: 100%;
+        font-size: 38px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .jumbotronItem {
+        margin-left: 5%;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+ 
+
+    .buttonMedicineSeacrh {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        margin-left: 5%;
+    }
+
+    .buttonDiagnoses {
+        margin-left: 5%;
+    }
+
+    .menuHeader {
+        margin-bottom: -20px;
+    }
+
+    .menuItem {
+        margin-bottom: 10px;
+    }
+
+    .hamburger {
+        display: flex;
+        background-color: #00A376;
+        border: 0;
+        font-size: 32px;
+        top: 1rem;
+        position: absolute;
+        right: 1em;
+        color: white;
+        cursor: pointer;
+    }
 }
 
-.footerRight {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    justify-items: center;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
+@media screen and (min-width: 700px) {
+    .navList{
+        position: absolute;
+        display: flex;
+        top: 0;
+        background-color: #00A376;
+        width: auto;
+        margin-right: 5%;
+        right: 0;
+    }
+
+    .jumbotronHeader{
+        text-align: center;
+        margin-left: 10%;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .buttonMedicineSeacrh {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin-left: 5%;
+    }
+
+    .menuSection {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5vh;
+    }
 }
 
-.footerRight a {
-    text-decoration: none;
-    display: block;
-    color: #F5F5F5;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: -0.017em;
+@media screen and (min-width: 1100px) {
+    .buttonMedicineSeacrh {
+        width: 25%;
+    }
 
-    color: #E1E1E1;
+    .jumbotron {
+        height: 400px;
+        flex-direction: row;
+    }
+
+    .nurse {
+        display: block; 
+        background-size: 200px;
+        width: 500px;
+        height: 450px;
+        left: 700px;
+        top: 0px;
+        background: url("../public/hero-image.png");
+        background-size: 62vh;
+        background-repeat: no-repeat;
+    }
+
+    .menuSection {
+        width: 62%;
+    }
 }

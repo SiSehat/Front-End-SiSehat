@@ -1,44 +1,37 @@
-import DiagnoseBar from '../../components/diagnose';
-import NavBar from '../../components/nav-bar';
-import Footer from '../../components/footer';
-import Link from 'next/link';
 import DiagnoseStyle from '../../styles/Diagnose.module.css';
+import DiagnoseSearchBar from '../../components/DiagnoseSearchBar';
 import Head from 'next/head';
+import { useState } from 'react';
+import DiagnoseList from '../../components/DiagnoseList';
+import MedicineList from '../../components/MedicineList';
+import NavBar from '../../components/navbar/NavBar';
+import Footer from '../../components/FooterBar';
 
-export async function getServerSideProps(context) {
-    const data = await fetch('https://api-si-sehat.vercel.app/drug')
-    const result = await data.json();
+export default function Diagnose({}) {
+    const [diagnoses, setDiagnoses] = useState('')
 
-    return {
-        props: {
-            result
-        }
+    const onDiagnoseHandler = (disease) => {
+        setDiagnoses(disease)
     }
-}
 
-export default function Diagnose({ result }) {
-    console.log(result.datasDrug);
     return (
         <div>
             <Head>
                 <title>Diagnosa Penyakit</title>
             </Head>
-
-            <main>
-                <NavBar />
-                <div>
-                    <DiagnoseBar />
-                    {
-                        result.datasDrug.map((value, key) => (
-                            <div>
-                                <li key={key}> {value.data.title} </li>
-                                <li key={key}> {value.data.short_desc} </li>
-                            </div>
-                        ))
-                    }
+            <header>
+                <NavBar active="diagnoses" />
+            </header>
+            <main id='main-content-diagnoses' className={DiagnoseStyle.main}>
+                <div className={DiagnoseStyle.diagnoses}>
+                    <h2 className={DiagnoseStyle.header}>Diagnosa Penyakit</h2>
+                    <p className={DiagnoseStyle.paragraph}>Kami membantu mendeteksi dini penyakit dan memberikan rekomendasi obat sesuai dengan kebutuhan Anda</p>
+                    <DiagnoseSearchBar onDiagnoseHandler={onDiagnoseHandler} />
+                    <DiagnoseList diagnoses={diagnoses} />
+                    <MedicineList diagnoses={diagnoses} />
                 </div>
-                <Footer />
             </main>
+            <Footer />
         </div>
     )
 }
