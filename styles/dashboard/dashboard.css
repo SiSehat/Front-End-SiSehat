@@ -1,7 +1,7 @@
 /* Sidebar Start */
 .wrapper-dashboard {
     display: flex;
-    border: 2px solid orange;
+    min-height: 100vh;
 }
 
 .wrapper-sidebar-dashboard {

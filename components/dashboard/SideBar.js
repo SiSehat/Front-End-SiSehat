@@ -24,10 +24,10 @@ const SideBar = () => {
                     </div>
                 </div>
                 <div className={display ? `item-sidebar item-sidebar-mobile` : `item-sidebar`}>
-                    <Link href="#" className={``}><FaDisease /> <span>Daftar Penyakit</span></Link>
+                    <Link href="/diseases" className={``}><FaDisease /> <span>Daftar Penyakit</span></Link>
                 </div>
                 <div className={display ? `item-sidebar item-sidebar-mobile` : `item-sidebar`}>
-                    <Link href="#" className={``}><AiFillMedicineBox /> <span>Daftar Obat</span></Link>
+                    <Link href="/drugs" className={``}><AiFillMedicineBox /> <span>Daftar Obat</span></Link>
                 </div>
                 <div className={display ? `item-sidebar item-sidebar-mobile` : `item-sidebar`}>
                     <Link href='/login' className={``}><FiLogOut /> <span>Keluar</span></Link>

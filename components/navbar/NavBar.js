@@ -30,6 +30,12 @@ function Navbar({ router }) {
         },
       ];
 
+    if (router.pathname === undefined)  return (
+      <>
+        <h1>Mohon direfresh web anda</h1>
+      </>
+    );
+
     return (
         <nav className={style.navbar}>
             <Link href="/" className='navSiSehat'>SiSehat</Link>
@@ -49,4 +55,4 @@ function Navbar({ router }) {
     )
 }
 
-export default Navbar
+export default withRouter(Navbar)
