@@ -2,6 +2,7 @@ import mapboxgl from "mapbox-gl";
 
 export default function GeolocationUser(props) {
     if (props.mapRef.current === null) return
+    if (props.containerRef.current === null) return
 
     const geolocation = new mapboxgl.GeolocateControl({
         positionOptions: {
