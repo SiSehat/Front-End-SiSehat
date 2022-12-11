@@ -50,7 +50,7 @@ const LoginInput = () => {
             toast.update(idToast, 
                 { render: 'Login Berhasil', type: 'success', isLoading: false, autoClose: 5000 }
             )
-            router.push('/dasboard')
+            router.push('/dashboard#')
         } else {
             toast.update(idToast, 
                 { render: 'Email / Password salah', type: 'error', isLoading: false, autoClose: 5000 }

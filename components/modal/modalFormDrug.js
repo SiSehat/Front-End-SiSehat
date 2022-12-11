@@ -131,7 +131,10 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
             setSelectedData((prevState) => {
                 return [
                     ...prevState,
-                    result.data.data
+                    {
+                        ...result.data.data,
+                        id: result.data.id
+                    }
                 ]
             })
         } catch (error) {

@@ -16,9 +16,9 @@ const DrugsList = ({ medicines }) => {
     }
     
     return (
-        <section className={DiagnoseStyle.cardList}>
+        <section className={DiagnoseStyle.cardListDrug}>
             <h2 className={DiagnoseStyle.disease__title}>Kemungkinan Obat</h2>
-            <div>
+            <div className={DiagnoseStyle.cardListDrugWrapper}>
                 {medicines.map((item, index) => (
                     <div id='disease__card' className={DiagnoseStyle.disease__card} key={index}>
                         <Link href='#' className={DiagnoseStyle.disease__header}><h3>{item.title}</h3></Link>

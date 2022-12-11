@@ -57,6 +57,7 @@ const DashboardListDrug = ({ datas }) => {
                 setSelectedData(null)
                 setSelectedPOSTData(null)
                 setSelectedEditData(data)
+                console.log(data);
                 modal.current.style.display = "block"
                 window.onclick = function(event) {
                     if (event.target == modal.current) {
