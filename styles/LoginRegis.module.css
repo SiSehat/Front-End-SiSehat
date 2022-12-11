@@ -128,7 +128,7 @@
         height: 713px;
         min-height: 100vh;
         float: right;
-        background-image: url('../public/doctor.jpg');
+        background-image: url('/doctor.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         filter: blur(1px);
