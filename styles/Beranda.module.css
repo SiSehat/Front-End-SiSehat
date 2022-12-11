@@ -342,7 +342,7 @@
         height: 450px;
         left: 700px;
         top: 0px;
-        background: url("../public/hero-image.png");
+        background: url("/hero-image.png");
         background-size: 62vh;
         background-repeat: no-repeat;
     }
