@@ -4,7 +4,6 @@ import { TbLayoutSidebarLeftCollapse, TbLayoutSidebarRightCollapse } from 'react
 import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import GeocoderControl from "./controler/geocoder";
 import GeolocationUser from "./controler/geolocationUser";
-import Footer from "../../components/FooterBar";
 import WrapperListHospitals from "../../components/map/wrapperHospitals";
 import Navbar from "../../components/navbar/Navbar";
 
