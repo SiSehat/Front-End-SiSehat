@@ -126,7 +126,11 @@
         display: flex;
         width: 50%;
         height: 713px;
+        min-height: 100vh;
         float: right;
-        background-color: #00A376;
+        background-image: url('../public/doctor.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(1px);
     }
 }
