@@ -4,12 +4,17 @@ import { FaDisease } from 'react-icons/fa'
 import { FiLogOut, FiMenu } from 'react-icons/fi'
 import { AiFillMedicineBox } from 'react-icons/ai'
 import { AiOutlineClose } from 'react-icons/ai';
+import Cookies from 'js-cookie'
 
 const SideBar = () => {
     const [display, setDisplay] = useState(false)
 
     const sidebarHandler = () => {
         setDisplay(!display)
+    }
+
+    const onLogoutHandler = () => {
+        Cookies.remove('email')
     }
 
     return (
@@ -29,7 +34,7 @@ const SideBar = () => {
                 <div className={display ? `item-sidebar item-sidebar-mobile` : `item-sidebar`}>
                     <Link href="/dashboard/drugs" className={``}><AiFillMedicineBox /> <span>Daftar Obat</span></Link>
                 </div>
-                <div className={display ? `item-sidebar item-sidebar-mobile` : `item-sidebar`}>
+                <div className={display ? `item-sidebar item-sidebar-mobile` : `item-sidebar`} onClick={onLogoutHandler}>
                     <Link href='/login' className={``}><FiLogOut /> <span>Keluar</span></Link>
                 </div>
             </div>

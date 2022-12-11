@@ -1,13 +1,18 @@
 import Router from "next/router"
 import { useEffect } from "react"
+import { authPage } from "../../middlewares/authorization"
 
-// export async function getServerSideProps(context) {
-//   return {
-//     redirect: {
-//       destination: '/dashboard/diseases'
-//     }
-//   }
-// }
+export async function getServerSideProps(context) {
+  const { email, redirect } = await authPage(context)
+
+  if (redirect) {
+    return { redirect }
+  }
+
+  return {
+    props: {}
+  }
+}
 
 const Dashboard = () => {
 

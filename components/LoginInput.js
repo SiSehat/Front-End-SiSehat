@@ -3,6 +3,8 @@ import { useState } from "react";
 import style from '../styles/LoginRegis.module.css';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
+import { setCookie } from "next-cookies";
+import Cookies from "js-cookie";
 
 const LoginInput = () => {
     const router = useRouter()
@@ -50,7 +52,9 @@ const LoginInput = () => {
             toast.update(idToast, 
                 { render: 'Login Berhasil', type: 'success', isLoading: false, autoClose: 5000 }
             )
-            router.push('/dashboard#')
+            
+            Cookies.set('email', result.data.email)
+            router.push('/dashboard')
         } else {
             toast.update(idToast, 
                 { render: 'Email / Password salah', type: 'error', isLoading: false, autoClose: 5000 }
