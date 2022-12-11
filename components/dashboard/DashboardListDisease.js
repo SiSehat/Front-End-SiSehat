@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { Table, Column, HeaderCell, Cell } from 'rsuite-table';
@@ -105,7 +106,7 @@ const DashboardListDisease = ({ datas }) => {
                 <p>{time}</p>
             </div>
             <div className='say-hello'>
-                <h3>Selamat Datang Joko !</h3>
+                <h3>Selamat Datang {Cookies.get('email')} !</h3>
             </div>
             <div className='dashboard-content'>
                 <p>Untuk melihat penyakit lebih lengkap dapat menekan tombol [ <b>detail</b> ]</p>
