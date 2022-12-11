@@ -112,7 +112,7 @@ const DashboardListDrug = ({ datas }) => {
             </div>
             <div className='say-hello'>
                 <h3>Selamat Datang Joko !</h3>
-                <p>adawdafawa;ldalfhakfhDHAKFAWD</p>
+                {/* <p>adawdafawa;ldalfhakfhDHAKFAWD</p> */}
             </div>
             <div className='dashboard-content'>
                 <p>Untuk melihat penyakit lebih lengkap dapat menekan tombol [ <b>detail</b> ]</p>
