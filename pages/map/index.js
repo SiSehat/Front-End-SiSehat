@@ -143,10 +143,14 @@ export default function Map() {
                     </div>
 
                     <div className="wrapper-feature" ref={findMe}>
-                        <GeolocationUser 
-                            containerRef={findMe}
-                            mapRef={mapRef}
-                            myLocation={findFaskes}/>
+                        {
+                            findMe.current && (
+                                <GeolocationUser 
+                                    containerRef={findMe}
+                                    mapRef={mapRef}
+                                    myLocation={findFaskes}/>
+                            )
+                        }
                     </div>
 
                     
