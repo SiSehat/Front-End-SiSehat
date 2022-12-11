@@ -3,10 +3,11 @@ import Link from 'next/link';
 import { FiMenu } from 'react-icons/fi';
 import { GrFormClose } from 'react-icons/gr';
 import { useState } from 'react';
-import { withRouter } from 'next/router';
+import { useRouter, withRouter } from 'next/router';
 
-function Navbar({ router }) {
+function Navbar() {
     const [display, setDisplay] = useState(false)
+    const router = useRouter();
 
     const handleClick = () => {
         setDisplay(!display)
@@ -55,4 +56,4 @@ function Navbar({ router }) {
     )
 }
 
-export default withRouter(Navbar)
+export default Navbar
