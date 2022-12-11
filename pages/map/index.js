@@ -5,7 +5,7 @@ import ReactMapGl, { Marker, Popup } from 'react-map-gl'
 import GeocoderControl from "./controler/geocoder";
 import GeolocationUser from "./controler/geolocationUser";
 import WrapperListHospitals from "../../components/map/wrapperHospitals";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/navbar/NavBar";
 
 export default function Map() {
     const [expand, setExpand] = useState(false);
