@@ -11,6 +11,7 @@ export default function Map() {
     const [expand, setExpand] = useState(false);
     const mapRef = useRef(null)
     const findMe = useRef(null)
+    const [findMeContainer, setFindMeContainer] = useState(null)
     const searchHosptial = useRef(null)
     const [selectedHospital, setSelectedHospital] = useState(null); 
     const [viewport, setViewport] = useState({
@@ -36,6 +37,8 @@ export default function Map() {
                 height: window.innerHeight
             }
         })
+        if (findMe.current) return
+        else setFindMeContainer(findMe.current)
 
         async function getRandomHospital() {
             const rawData = await fetch('https://api-si-sehat.vercel.app/hospitals/random')
@@ -143,14 +146,10 @@ export default function Map() {
                     </div>
 
                     <div className="wrapper-feature" ref={findMe}>
-                        {
-                            findMe.current && (
-                                <GeolocationUser 
-                                    containerRef={findMe}
-                                    mapRef={mapRef}
-                                    myLocation={findFaskes}/>
-                            )
-                        }
+                        <GeolocationUser 
+                            containerRef={findMeContainer}
+                            mapRef={mapRef}
+                            myLocation={findFaskes}/>
                     </div>
 
                     
