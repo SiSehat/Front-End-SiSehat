@@ -17,13 +17,13 @@ export default function GeolocationUser(props) {
     const getContainerNode = () => {
         const { containerRef } = props
 
-        return (containerRef && containerRef.current) || null
+        return (containerRef && containerRef?.current) || null
     }
     
     const getMapboxMap = () => {
         const { mapRef } = props
 
-        return (mapRef && mapRef.current && mapRef.current.getMap()) || null
+        return (mapRef && mapRef?.current && mapRef?.current.getMap()) || null
     }
 
     if (getMapboxMap()) {
