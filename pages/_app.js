@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <link rel="shortcut icon" href='/favicon.png' />
+        <meta name="dicoding:email" content="dhinorahmad0@gmail.com" />
       </Head>
       <Component {...pageProps} />
         <ToastContainer />
