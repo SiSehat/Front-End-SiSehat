@@ -19,7 +19,6 @@ const MedicineList = ({ diagnoses }) => {
             })
             const data = await resp.json();
             setMedicine(data)
-            console.log(data)
             return data
         }
         if(diagnoses){

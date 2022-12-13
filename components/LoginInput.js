@@ -59,7 +59,6 @@ const LoginInput = () => {
             toast.update(idToast, 
                 { render: 'Email / Password salah', type: 'error', isLoading: false, autoClose: 5000 }
             )
-            console.log(result);
         }
     }
 

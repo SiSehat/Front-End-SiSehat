@@ -3,7 +3,6 @@ import Link from "next/link"
 import Router from 'next/router'
 
 const DrugsList = ({ medicines }) => {
-    console.log(medicines)
     if (medicines?.length == null) {
         
         return (

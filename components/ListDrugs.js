@@ -21,13 +21,6 @@ const ListItems = ({ drugs }) => {
         <p className={drugsStyle.cardCategory}>Kategori :</p>
         <button className={drugsStyle.buttonCard}>Detail</button>
       </div>
-      {/* <ul>
-        {drugs.dataDrug.data.map((drug) => (
-          <div key={drug.id}>
-            <li>{drug.data}</li>
-          </div>
-        ))}
-      </ul> */}
     </div>)
 };
 
