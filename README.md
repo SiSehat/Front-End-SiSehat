@@ -25,4 +25,4 @@ Kami menyediakan fitur untuk mendiagnosa penyakit berdasarkan gejala yang dimasu
 Kami juga menyediakan fitur untuk mengatahui fasilitas kesehatan terdekat dengan user (pasien), user cukup menuju menu map, lalu menekan tombol sidebar pada `pojok kiri atas`, dan tekan tombol `temukan saya`
 
 > Note: saya mengatahui kekurangan pada tingkat akuratan data yang masih belum sempurna namun fitur ini cukup untuk benar-benar menemukan fasilitas kesehatan terdekat
-![Map SiSehat Design by Musa & Putri](github/Map.gif)
+![Map SiSehat Design by Musa & Putri](github/Map2.gif)
