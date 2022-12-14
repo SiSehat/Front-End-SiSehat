@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../styles/globals.css'
 import '../styles/navbar/navbar.css'
 import '../styles/map/map.css'
+import '../styles/map/map-responsive.css'
 import '../styles/dashboard/dashboard.css'
 import '../styles/dashboard/dashboard-responsive.css'
 import '../styles/modal/modal.css'

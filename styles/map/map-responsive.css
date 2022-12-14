@@ -1,14 +1,16 @@
-@media (max-width: 600px) {
-
-}
-
 @media screen and (mix-width: 650px) {
     .wrapper-sidebar {
         width: 96%;
     }
 }
 
-@media (max-width: 500px) {
+@media (min-width: 650px) and (max-width: 800px) {
+    .wrapper-sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
     main.container { 
         flex-direction: unset;
     }
