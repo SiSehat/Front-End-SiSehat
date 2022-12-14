@@ -19,4 +19,4 @@ Kami menyediakan fitur untuk mendiagnosa penyakit berdasarkan gejala yang dimasu
 
 > Note: Data yang ada didalam database masih sangatlah terbatas mohon maaf, namun untuk sementara untuk mendiagnosa bisa menggunakan keyword `lemas`
 
-![Beranda SiSehat Design by Musa & Putri](github/Diagnosa_Penyakit.gif)
+![Beranda SiSehat Design by Musa & Putri](github/Diagnosa_Penyakit2.gif)
