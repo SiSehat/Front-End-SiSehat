@@ -12,4 +12,5 @@ memberikan informasi terkait rumah sakit dan apotek terdekat. Dengan aplikasi in
 diharapkan dapat memberikan kemudahan bagi pengguna dalam menjalani proses  pengobatan penyakit.
 
 ![Beranda SiSehat Design by Musa & Putri](github/Beranda.png)
+[Design UI/UX by Musa & Putri](https://www.figma.com/file/DjAi2w4tduhSyrbDmjR8R0/SiSehat?node-id=1%3A3)
 
