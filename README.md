@@ -15,7 +15,8 @@ diharapkan dapat memberikan kemudahan bagi pengguna dalam menjalani proses  peng
 [Design UI/UX by Musa & Putri](https://www.figma.com/file/DjAi2w4tduhSyrbDmjR8R0/SiSehat?node-id=1%3A3)
 
 ## Cara Mendiagnosa Penyakit
-![Beranda SiSehat Design by Musa & Putri](github/Diagnosa_Penyakit.gif)
 Kami menyediakan fitur untuk mendiagnosa penyakit berdasarkan gejala yang dimasukan oleh user (pasien), user cukup memasukan gejala apa yang dideritanya, sistem akan mencarikan penyakit dan obat yang sesuai dengan penyakit 
 
 > Note: Data yang ada didalam database masih sangatlah terbatas mohon maaf, namun untuk sementara untuk mendiagnosa bisa menggunakan keyword `lemas`
+
+![Beranda SiSehat Design by Musa & Putri](github/Diagnosa_Penyakit.gif)
