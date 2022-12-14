@@ -11,9 +11,7 @@ untuk penyakit tersebut. Selain fitur rekomendasi obat, terdapat juga fitur untu
 memberikan informasi terkait rumah sakit dan apotek terdekat. Dengan aplikasi ini, <br>
 diharapkan dapat memberikan kemudahan bagi pengguna dalam menjalani proses  pengobatan penyakit.
 
-> Jika ingin mengakses menu dashboard
-> [Login](https://sisehat.vercel.app/login) <br>
-> [Register](https://sisehat.vercel.app/register)
+> Jika ingin mengakses menu dashboard [Login](https://sisehat.vercel.app/login) [Register](https://sisehat.vercel.app/register)
 
 ![Beranda SiSehat Design by Musa & Putri](github/Beranda.png)
 [Design UI/UX by Musa & Putri](https://www.figma.com/file/DjAi2w4tduhSyrbDmjR8R0/SiSehat?node-id=1%3A3)
