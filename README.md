@@ -14,3 +14,5 @@ diharapkan dapat memberikan kemudahan bagi pengguna dalam menjalani proses  peng
 ![Beranda SiSehat Design by Musa & Putri](github/Beranda.png)
 [Design UI/UX by Musa & Putri](https://www.figma.com/file/DjAi2w4tduhSyrbDmjR8R0/SiSehat?node-id=1%3A3)
 
+## Cara Mendiagnosa Penyakit
+![Beranda SiSehat Design by Musa & Putri](github/Diagnosa_Penyakit.gif)
