@@ -20,3 +20,9 @@ Kami menyediakan fitur untuk mendiagnosa penyakit berdasarkan gejala yang dimasu
 > Note: Data yang ada didalam database masih sangatlah terbatas mohon maaf, namun untuk sementara untuk mendiagnosa bisa menggunakan keyword `lemas`
 
 ![Beranda SiSehat Design by Musa & Putri](github/Diagnosa_Penyakit2.gif)
+
+## Cara Menemukan Fasilitas Kesehatan Terdekat
+Kami juga menyediakan fitur untuk mengatahui fasilitas kesehatan terdekat dengan user (pasien), user cukup menuju menu map, lalu menekan tombol sidebar pada `pojok kiri atas`, dan tekan tombol `temukan saya`
+
+> Note: saya mengatahui kekurangan pada tingkat akuratan data yang masih belum sempurna namun fitur ini cukup untuk benar-benar menemukan fasilitas kesehatan terdekat
+![Map SiSehat Design by Musa & Putri](github/Map.gif)
