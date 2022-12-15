@@ -8,6 +8,9 @@ import '../styles/map/map-responsive.css'
 import '../styles/dashboard/dashboard.css'
 import '../styles/dashboard/dashboard-responsive.css'
 import '../styles/modal/modal.css'
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import Loading from '../components/Loading';
 
 function MyApp({ Component, pageProps }) {
   
@@ -17,6 +20,7 @@ function MyApp({ Component, pageProps }) {
         <link rel="shortcut icon" href='/favicon.png' />
         <meta name="dicoding:email" content="dhinorahmad0@gmail.com" />
       </Head>
+      <Loading />
       <Component {...pageProps} />
         <ToastContainer />
     </>

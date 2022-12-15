@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import DrugsList from "../../components/DrugsList";
 import DrugsSearchBar from "../../components/DrugsSearchBar";
 import styleDrug from '../../styles/Drug.module.css';
