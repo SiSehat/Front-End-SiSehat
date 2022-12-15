@@ -8,8 +8,6 @@ import '../styles/map/map-responsive.css'
 import '../styles/dashboard/dashboard.css'
 import '../styles/dashboard/dashboard-responsive.css'
 import '../styles/modal/modal.css'
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
 import Loading from '../components/Loading';
 
 function MyApp({ Component, pageProps }) {
