@@ -26,7 +26,8 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
     }
 
     const onSearch = (keyword) => {
-        setSearch(keyword.target.value)
+        const keywordFix = keyword.target.value.replace(' ', '-')
+        setSearch(keywordFix)
     }
 
     const onHandlerSearch = async (e) => {
@@ -54,6 +55,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
                     placeholder='Tuliskan gejala anda, misalnya : lemas, demam, dsb'
                     value={search}
                     onChange={onSearch} />
+                <p style={{color: 'grey'}} className={DiagnoseStyle.note}>lebih dari satu gejala ? gunakan <span style={{color: 'red', fontWeight: 'bold'}}> koma (,)</span></p>
                 <button className={DiagnoseStyle.button} type="submit">Cari</button>
             </form>
         </div>
