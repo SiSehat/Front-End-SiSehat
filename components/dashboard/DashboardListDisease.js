@@ -57,6 +57,8 @@ const DashboardListDisease = ({ datas }) => {
                 window.onclick = function(event) {
                     if (event.target == modal.current) {
                       modal.current.style.display = "none";
+                    setSelectedEditData(null)
+
                     }
                 }
             break;
