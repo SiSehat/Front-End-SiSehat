@@ -47,7 +47,7 @@ export default function ModalForm({ method, selectedData, setSelectedData }) {
     }
 
     const handleObat = (element) => {
-        const drugs = element.target.value.split(',')
+        const drugs = element.target.value.toLowerCase().split(',')
         setSelectedEditData((prevState) => {
             return {
                 ...prevState,

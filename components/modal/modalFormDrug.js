@@ -10,7 +10,7 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
         setSelectedEditData((prevState) => {
             return {
                 ...prevState,
-                title: element.target.value
+                title: element.target.value.toLowerCase()
             }
         })
     }
