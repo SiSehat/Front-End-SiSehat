@@ -22,7 +22,7 @@ const DetailMedicine = (props) => {
                     <img className={style.disease__image} src={props.thumbnail_url} />
                     <p className={style.disease__about} >{props.about}</p>
                     <p className={style.disease__obat}><strong>Kegunaan</strong> : {props.kegunaan}</p>
-                    <h4>Gejala</h4>
+                    <h4>warning</h4>
                     <div className={style.disease__gejala}>
                         {props.warning.map((symptom, index) => {
                             return (
