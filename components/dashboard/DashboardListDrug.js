@@ -116,7 +116,7 @@ const DashboardListDrug = ({ datas }) => {
                 {/* <p>adawdafawa;ldalfhakfhDHAKFAWD</p> */}
             </div>
             <div className='dashboard-content'>
-                <p>Untuk melihat penyakit lebih lengkap dapat menekan tombol [ <b>detail</b> ]</p>
+                <p>Untuk melihat obat lebih lengkap dapat menekan tombol [ <b>detail</b> ]</p>
                 <button onClick={() => handleClick(null, 'add')}>Tambah Data</button>
 
                 <Table

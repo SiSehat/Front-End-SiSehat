@@ -87,8 +87,16 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
             return {
                 ...prevState,
                 about: element.target.value,
-                short_desc: element.target.value.slice(0, 1000),
-                thumbnail_url: 'not_allowed'
+                short_desc: element.target.value.slice(0, 1000)
+            }
+        })
+    }
+
+    const handlerThumbnailUrl = (element) => {
+        setSelectedEditData((prevState) => {
+            return {
+                ...prevState,
+                thumbnail_url: element.target.value ?? 'https://corporate.dukehealth.org/sites/default/files/api/images/aspect:1.25-width:768-position:center/2022-10/Pill%20Bottle.jpg'
             }
         })
     }
@@ -167,6 +175,10 @@ export default function ModalFormDrug({ method, selectedData, setSelectedData })
                 <div>
                     <label>Categories: </label>
                     <input type='text' value={ selectedEditData.categories } onChange={handleCategories} />
+                </div>
+                <div>
+                    <label>image url: </label>
+                    <input type='text' value={ selectedEditData.thumbnail_url } onChange={handlerThumbnailUrl} />
                 </div>
                 <div>
                     <label>about: </label>
