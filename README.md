@@ -3,6 +3,7 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![API](https://img.shields.io/static/v1?label=SiAPI&message=API_SiSehat&color=white)
 
 SiSehat merupakan aplikasi berbasis website <br>
 yang berfungsi untuk memberikan rekomendasi obat berdasarkan gejala penyakit yang <br>
