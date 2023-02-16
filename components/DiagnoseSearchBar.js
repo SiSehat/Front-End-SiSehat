@@ -21,23 +21,20 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
             })
         })
         const data = await resp.json();
-        // console.log(data);
         return data
     }
 
     const onSearch = (keyword) => {
-        const keywordFix = keyword.target.value.replace(' ', '-')
-        setSearch(keywordFix)
+        setSearch(keyword.target.value)
     }
 
     const onHandlerSearch = async (e) => {
         e.preventDefault();
         const symptoms = search.trim().toLowerCase().replace(/\s/g, '').split(',')
-        // console.log(symptoms)
         setLoading(true)
-        const {status, data} = await diagnoseDiseases(symptoms)
-        // console.log(status)
-        if(status==='success'){
+        const resultDisease = await diagnoseDiseases(symptoms)
+
+        if(resultDisease.length !== 0){
             toast.success('Diagnosa dan Rekomendasi Obat Ditemukan')
             setLoading(false)
         } else {
@@ -45,7 +42,7 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
             setLoading(false)
         }
         // console.log(data)
-        onDiagnoseHandler(data)
+        onDiagnoseHandler(resultDisease)
     }
 
     return (
@@ -55,7 +52,19 @@ const DiagnoseSearchBar = ({ onDiagnoseHandler }) => {
                     placeholder='Tuliskan gejala anda, misalnya : lemas, demam, dsb'
                     value={search}
                     onChange={onSearch} />
-                <p style={{color: 'grey'}} className={DiagnoseStyle.note}>lebih dari satu gejala ? gunakan <span style={{color: 'red', fontWeight: 'bold'}}> koma (,)</span></p>
+                <p style={{
+                        color: 'grey', 
+                        display: 'inline-block',
+                        marginRight: '20px'}} className={DiagnoseStyle.note}>lebih dari satu gejala ? gunakan <span style={{color: 'red', fontWeight: 'bold'}}> koma (,)</span></p>
+                {search.includes(',') == 0 && (
+                    <p style={{ 
+                        color: 'black', 
+                        backgroundColor: 'pink', 
+                        padding: '10px 20px',
+                        display: 'inline-block',
+                        borderRadius: '6px'
+                    }} className={DiagnoseStyle.note}>Masukan gejala lebih spesifik</p>
+                )}
                 <button className={DiagnoseStyle.button} type="submit">Cari</button>
             </form>
         </div>

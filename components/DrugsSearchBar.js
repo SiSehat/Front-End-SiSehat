@@ -22,7 +22,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
       })
     })
     const data = await resp.json();
-    setMedicines(data)
+    setMedicines(data);
     return data 
   }
 
@@ -54,7 +54,7 @@ const DrugsSearchBar = ({ onDrugsHandler }) => {
           placeholder='Tuliskan nama obat, misalnya: Paramex Flu dan Batuk, dsb '
           value={search}
           onChange={onSearch} />
-        <button className={DiagnoseStyle.button} type="submit">Cari</button>
+        <button className={`button`} type="submit">Cari</button>
       </form>
     </div>
   )

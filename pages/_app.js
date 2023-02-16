@@ -8,6 +8,8 @@ import '../styles/map/map-responsive.css'
 import '../styles/dashboard/dashboard.css'
 import '../styles/dashboard/dashboard-responsive.css'
 import '../styles/modal/modal.css'
+import '../styles/diagnose.css'
+import '../styles/drug.css'
 import Loading from '../components/Loading';
 
 function MyApp({ Component, pageProps }) {

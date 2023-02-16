@@ -15,8 +15,8 @@ export async function getServerSideProps(context) {
     }
 }
 
-const Drugs = ({ data }) => {
-    const [medicines, setMedicines] = useState(() => data)
+const Drugs = ({ datas }) => {
+    const [medicines, setMedicines] = useState(() => datas)
 
     const onDrugsHandler = (drugs) => {
         setMedicines(drugs)

@@ -35,7 +35,7 @@
 .wrapper_list_drug {
     display: flex;
     justify-content: space-evenly;
-    flex-direction: row !important;
+    flex-direction: row ;
 }
 
 .input {
@@ -78,12 +78,22 @@
     gap: 10px;
 }
 
+.cardList span p {
+    margin-right: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .cardlist div {
     display: flex;
     flex-direction: column;
 }
 
 /* Disease Styling */
+
+.disease__title, .diagnose__title  {
+    margin-bottom: 0;
+}
 
 .disease__title {
     padding: 5px;
@@ -92,11 +102,10 @@
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
     line-height: 19px;
     letter-spacing: -0.017em;
 
-    color: #505050;
+    color: #635555;
 }
 
 .disease__card {
@@ -117,6 +126,10 @@
     transition: all .2s ease;
 }
 
+.disease__card:not(:first-child) {
+    margin-left: 20px;
+}
+
 .disease__card:hover {
     cursor: pointer;
     box-shadow: 5px 5px 5px #d1d1d1;
@@ -126,6 +139,8 @@
 .disease__card div {
     height: 20vh;
     overflow: hidden;
+    border-radius: 10px;
+    
 }
 
 .disease__header {
@@ -144,6 +159,7 @@
 
 .disease__image {
     width: 100%;
+    height: fit-content;
 }
 
 .disease__desc {
@@ -156,7 +172,7 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.017em;
-
+    margin: 10px 0 !important;
     /* grey-light */
     color: #6E6E6E;
 
@@ -187,7 +203,6 @@
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
     line-height: 19px;
     letter-spacing: -0.017em;
 
@@ -197,22 +212,40 @@
 .diagnose__card {
     /* green */
     display: grid;
-    margin-left: 140px;
     justify-content: start;
-    width: 300px;
     padding: 15px;
     color: white;
     /* green */
     border: 1px solid #00A376;
     border-radius: 10px;
+    transition: transform .2s;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.diagnose__card.fullWidth, .disease__card.fullWidth {
+    width: 100%;
+}
+
+.diagnose__card.cardWidth, .disease__card.cardWidth {
+    width: 300px;
+}
+
+.diagnose__card:hover {
+    transform: scale(.98);
+    cursor: pointer;
 }
 
 .priority {
     background: #00A376;
+    color: white;
 }
 
 .releated {
-    background-color: #E1E1E1;
+    background-color: #f7f7f7;
+    color: black;
 }
 
 .diagnose__header {
@@ -239,10 +272,9 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.017em;
-    color: #E1E1E1;
 }
 
-.diagnose__detail {
+.diagnose__button_to_detail {
     text-decoration: none;
     color: white;
 
@@ -255,14 +287,30 @@
     line-height: 15px;
     /* identical to box height */
     display: flex;
+    justify-content: space-between;
     align-items: center;
     letter-spacing: -0.017em;
+    padding: 1em;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s;
+}
 
+.diagnose__card:hover .diagnose__button_to_detail {
+    background-color: #00A376;
+    color: white;
+    border: 2px solid white;
+}
+
+.releated .diagnose__button_to_detail {
+    color: #00A376;
+    border: 2px solid #00A376 ;
+}
+
+.priority .diagnose__button_to_detail {
     color: #FFFFFF;
     background-color: #00A376;
-    padding: 1em;
-    border: 0;
-    cursor: pointer;
 }
 
 @media screen and (min-width: 350px) {
@@ -294,21 +342,26 @@
 
     .diagnose__title {
         margin-left: 0;
-        text-align: center;
     }
 
     .diagnose__card { 
-        margin-left: 0;
+        margin-left: 20px;
+        margin-top: 20px;
     }
 
     .cardList {
         display: flex;
         justify-content: center;
+        flex-direction: column;
+    }
+
+    .cardList span {
+        display: flex;
     }
 
     .disease__title {
         margin-left: 0;
-        text-align: center;
+        margin-bottom: 20px;
     }
 
     .disease__card {
@@ -348,7 +401,7 @@
     }
 }
 
-@media screen and (min-width: 1100px) {
+@media screen and (max-width: 500px) {
     .diagnose__title {
         margin-left: 0;
         text-align: left;
@@ -358,6 +411,10 @@
         justify-content: flex-start;
     }
 
+    .cardList span {
+        flex-direction: column;
+    }
+
     .cardListDrug .cardListDrugWrapper {
         display: flex;
         flex-direction: row;
@@ -365,11 +422,14 @@
         flex-flow: wrap;
     }
 
-    .cardList div {
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
+    .diagnose__card {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 0 !important;
+    }
 
+    .wrapper_list_drug  {
+        flex-direction: column;
     }
 
     .disease__title {
@@ -378,9 +438,9 @@
     }
 
     .disease__card {
-        width: 30%;
+        width: 100%;
         justify-content: space-between;
-        margin-left: 0;
+        margin-left: 0 !important;
         margin-bottom: 5vh;
     }
 }
