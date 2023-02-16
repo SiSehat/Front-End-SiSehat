@@ -1,6 +1,6 @@
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import Router from 'next/router'
-import { kapitalisasiKata } from '../pages/utils/util'
+import { kapitalisasiKata } from '../utils/util'
 
 const DiagnoseList = ({ diagnoses }) => {
   if (!diagnoses) {
